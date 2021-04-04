@@ -1,0 +1,24 @@
+Coisas importantes para adicionar no site:
+
+> Configurações
+	- Geral
+		Nome real
+		Nome de usuário
+		
+	
+	- Segurança
+	
+	
+	- Privacidade
+	
+	
+	- Bloqueados
+	
+	
+	- Preferências
+		Preferência de idioma
+		Aparência
+			Minhas aparências
+			
+	
+	- Filtro

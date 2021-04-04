@@ -1,0 +1,212 @@
+@keyframes achievement-animation {
+    0% {
+        transform: translateY(calc(-100% - 80px - 15px));
+        opacity: 0;
+    }
+
+    7% {
+        transform: none;
+        opacity: 1;
+    }
+
+    90% {
+        transform: none;
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(calc(-100% - 80px - 15px));
+        opacity: 0;
+    }
+}
+
+div.achievement::before {
+    content: attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text) attr(text);
+    position: absolute;
+    color: var(--cor);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
+    top: 0;
+    left: 0;
+    word-break: break-all;
+    width: 150%;
+    height: 100%;
+    border-radius: 6px;
+    opacity: 0.3;
+    animation: 6s achievement-before-animation linear;
+}
+
+@keyframes achievement-before-animation {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-25%);
+    }
+}
+
+div.is-secret {
+    background: var(--qua) !important;
+}
+
+div.achievement {
+    padding: 15px;
+    background: var(--feat);
+    border-radius: 6px;
+    position: fixed;
+    top: 65px;
+    z-index: 3;
+    width: calc(300px + 30px);
+    left: calc(50% - 165px);
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    height: calc(50px + 30px);
+    box-sizing: border-box;
+    user-select: none;
+    animation: 6s achievement-animation ease-out;
+    animation-fill-mode: forwards;
+}
+
+div.achievement-face {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 50px;
+    animation: .5s achievement-face-animation ease-in;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes achievement-face-animation {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+div.achievement-face-icon-space {
+    font-size: 30px;
+    color: var(--cor);
+    animation: 1s achievement-trophy-animation infinite;
+}
+
+@keyframes achievement-trophy-animation {
+    0% {
+        transform: scaleY(1);
+    }
+
+    12.5% {
+        transform: scaleY(0.8);
+    }
+
+    25% {
+        transform: scaleY(1);
+    }
+
+    38.5% {
+        transform: scaleY(0.8);
+    }
+
+    50% {
+        transform: scaleY(1);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+div.achievement-face-text-space {
+    margin-left: 15px;
+}
+
+div.achievement-face-title-space {
+    font-family: "Exo 2", "Rajdhani", "Viga", Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: var(--cor);
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+div.achievement-face-exp-space {
+    color: var(--sel);
+    font-family: "Viga", "Exo 2", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+div.achievement-get {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 300px;
+    height: 50px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    animation: 4s achievement-get-animation ease-in-out;
+    animation-delay: 2s;
+    transform: translateY(100px);
+    animation-fill-mode: forwards;
+}
+
+@keyframes achievement-get-animation {
+    0% {
+        transform: translateY(100px);
+    }
+
+    12.5% {
+        transform: translateY(0);
+    }
+
+    75% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(300px);
+        opacity: 0;
+    }
+}
+
+img.achievement-icon {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+    -webkit-user-drag: none;
+    background-color: white;
+}
+
+div.achievement-text-space {
+    margin-left: 15px;
+}
+
+div.achievement-title-space {
+    font-family: "Titillium Web", "Rajdhani", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+div.achievement-desc-space {
+    font-family: "Rajdhani", "PT Sans", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin-top: -3px;
+    color: var(--cor);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

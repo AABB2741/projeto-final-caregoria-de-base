@@ -1,0 +1,485 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body, html {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body {
+    background: var(--bc);
+    font-family: Arial;
+    color: white;
+}
+
+button {
+    font-family: "Exo 2", "Viga", Arial, Helvetica, sans-serif;
+}
+
+div.already-logged-space {
+    position: fixed;
+    top: 15px;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.already-logged {
+    background: var(--feat);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.7);
+}
+
+div.already-logged-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+div.already-left {
+    width: 100%;
+    padding: 15px;
+    cursor: pointer;
+    user-select: none;
+    border: 2px solid transparent;
+    border-radius: 6px 0 0 6px;
+}
+
+div.already-left:hover {
+    backdrop-filter: brightness(1.4);
+}
+
+div.already-left:focus {
+    border-color: var(--br);
+}
+
+span.already-title {
+    font-size: 20px;
+    display: block;
+    font-family: "Exo 2", Arial, Helvetica, sans-serif;
+    font-weight: 800;
+}
+
+span.already-description {
+    display: block;
+    font-size: 14px;
+    max-width: 50vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: bold;
+    color: var(--cor);
+}
+
+span.already-description {
+    font-weight: normal;
+}
+
+span.already-name {
+    font-weight: bold;
+}
+
+span.already-name::after {
+    content: '.';
+    font-weight: normal;
+}
+
+div.already-right {
+    display: flex;
+    align-self: stretch;
+}
+
+button.already-right-close {
+    padding: 15px;
+    background: transparent;
+    font-size: 20px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    color: var(--cor);
+    border-radius: 0 6px 6px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button.already-right-close:hover {
+    backdrop-filter: brightness(1.4);
+}
+
+button.already-right-close:focus {
+    border-color: var(--br);
+}
+
+div.page-content {
+    width: 100vw;
+    min-height: 590px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.fb-log-space {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
+}
+
+div.fb-text-space {
+    width: 40vw;
+    word-break: break-word;
+}
+
+h1.fb-title {
+    color: var(--feat);
+    font-size: 40px;
+}
+
+span.fb-version {
+    filter: brightness(0.8);
+    font-size: 30px;
+}
+
+h2.fb-desc {
+    font-size: 25px;
+    transition: .5s opacity;
+}
+
+div.fb-form {
+    padding: 30px;
+    background: var(--bc);
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.7);
+    border-radius: 4px;
+    width: 300px;
+}
+
+div.fb-form-container {
+    margin-top: 15px;
+}
+
+div.fb-form-name-space {
+    margin-top: 0;
+}
+
+input.fb-form-name {
+    width: calc(100% - 15px);
+}
+
+div.fb-form-password-div {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+input.fb-password {
+    width: 100%;
+    border-radius: 4px 0 0 4px !important;
+}
+
+button.fb-password-view {
+    border-radius: 0 4px 4px 0 !important;
+    border: 2px solid transparent;
+}
+
+button.fb-password-view:focus {
+    border-color: var(--br);
+}
+
+div.fb-form-middle {
+    margin-top: 30px;
+}
+
+button.fb-login {
+    background: var(--feat);
+    padding: 18px;
+    border-radius: 4px;
+    border: 0;
+    width: 100%;
+    font-weight: bold;
+    color: var(--cor);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button.fb-login:hover {
+    filter: brightness(0.85);
+}
+
+button.fb-login:focus {
+    border-color: var(--br);
+}
+
+div.form-split {
+    display: block;
+    background: var(--br);
+    height: 1px;
+}
+
+div.fb-form-forgot-space {
+    margin: 15px 0;
+    text-align: center;
+}
+
+span.fb-forgot {
+    color: var(--feat);
+    cursor: pointer;
+    user-select: none;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+span.fb-forgot:hover {
+    text-decoration: underline;
+}
+
+div.fb-reg-btn-space {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+button.fb-reg-btn {
+    padding: 12px;
+    background: var(--sel);
+    border: 0;
+    border-radius: 4px;
+    font-weight: bold;
+    color: var(--inblack);
+    cursor: pointer;
+}
+
+button.fb-reg-btn:hover {
+    filter: brightness(0.85);
+}
+
+button.fb-reg-btn:focus {
+    border-color: var(--br);
+}
+
+div.fb-reg-space {
+    width: 100vw;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s transform, .3s opacity;
+    transform: scale(1);
+    opacity: 1 !important;
+}
+
+div.hidden-reg-space {
+    opacity: 0 !important;
+    transform: scale(0.9);
+}
+
+div.fb-reg {
+    width: 400px;
+    background: var(--bc);
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+div.fbr-content {
+    padding: 15px;
+}
+
+div.fbr-top {
+    border-bottom: 1px solid var(--br);
+    padding-bottom: 15px;
+}
+
+div.fbr-top-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+i.fbr-close {
+    font-size: 20px;
+    padding: 5px;
+    color: var(--cor);
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: .1s transform;
+}
+
+i.fbr-close:hover {
+    background: var(--cor);
+    background-color: #444444;
+    background-blend-mode: overlay;
+}
+
+i.fbr-close:active {
+    border-color: var(--br);
+    transform: scale(0.9);
+}
+
+div.rf-container {
+    margin-top: 15px;
+}
+
+input.rf-name {
+    width: calc(100% - 15px);
+}
+
+input.rf-username {
+    width: calc(100% - 15px);
+}
+
+div.rf-password-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+input.rf-password {
+    width: 100%;
+    border-radius: 4px 0 0 4px !important;
+}
+
+button.rf-password-view {
+    border-radius: 0 4px 4px 0 !important;
+    border: 2px solid transparent;
+}
+
+button.rf-password-view:focus {
+    border-color: var(--br);
+}
+
+div.page-lang-space {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+button.page-lang {
+    padding: 5px;
+    border: 2px solid transparent;
+    background: var(--bc-s);
+    color: var(--cor);
+    border-radius: 0 4px 0 0;
+    cursor: pointer;
+}
+
+button.page-lang:hover {
+    background: var(--hov);
+}
+
+button.page-lang:focus {
+    border-color: var(--br);
+}
+
+input.rf-date {
+    padding: 5px;
+    border: 2px solid transparent;
+    color: var(--cor);
+    background: var(--bc-s);
+    border-radius: 4px;
+    width: 35px;
+}
+
+input.rf-date:focus {
+    border-color: var(--br);
+}
+
+input.rf-date::-webkit-inner-spin-button {
+    display: none;
+}
+
+div.rf-gender-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+label.rf-gender-label {
+    padding: 7px;
+    background: var(--bc-s);
+    border-radius: 4px;
+    border: 0;
+    cursor: pointer;
+    color: var(--cor);
+    user-select: none;
+}
+
+label.rf-gender-label:hover {
+    background: var(--hov);
+}
+
+input.rf-gender:checked + span {
+    color: var(--sel);
+}
+
+div.fbr-terms-space {
+    margin-top: 15px;
+}
+
+span.fbr-terms {
+    font-size: 12px;
+    line-height: 14px;
+}
+
+span.fbr-terms span.fbr-terms-link {
+    color: var(--feat);
+    cursor: pointer;
+}
+
+span.fbr-terms span.fbr-terms-link:hover {
+    text-decoration: underline;
+}
+
+div.fbr-register-space {
+    margin-top: 15px;
+}
+
+div.fbr-register-around {
+    display: flex;
+    justify-content: center;
+}
+
+button.fbr-register {
+    color: var(--inblack);
+    background: var(--sel);
+    padding: 12px;
+    border-radius: 4px;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button.fbr-register:hover {
+    filter: brightness(0.8);
+}
+
+button.fbr-register:focus {
+    border-color: var(--br);
+}
+
+
+
+/* Media queries */
+@media (max-width: 1270px) {
+    div.fb-log-space {
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 100vw;
+    }
+
+    div.fb-form-space {
+        margin-top: 30px;
+    }
+}

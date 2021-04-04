@@ -1,0 +1,47 @@
+div.xp-count {
+    position: fixed;
+    right: 25px;
+    bottom: 15px;
+    pointer-events: none;
+    color: var(--sel);
+    z-index: 10;
+}
+
+div.xp-count span {
+    font-size: 16px;
+    font-family: "Titillium Web", "Exo 2", "Viga", "PT Sans", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    animation: 5s xp-gain-animation cubic-bezier(.85,.01,.2,.99);
+    display: block;
+    animation-fill-mode: forwards;
+}
+
+div.xp-count span::before {
+    content: '+';
+}
+
+div.xp-count span::after {
+    content: 'XP';
+}
+
+@keyframes xp-gain-animation {
+    0% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+
+    3% {
+        transform: none;
+        opacity: 1;
+    }
+
+    97% {
+        transform: none;
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+}

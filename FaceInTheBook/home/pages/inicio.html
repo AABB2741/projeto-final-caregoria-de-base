@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial - Face In The Book</title>
+
+    <!-- Fontes da página -->
+    <div class="page-fonts"></div>
+
+    <!-- Estilos da página -->
+    <link rel="stylesheet" href="../../common/styles/root.css">
+    <link rel="stylesheet" href="../../common/styles/def.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../../common/styles/warn.css">
+
+</head>
+
+<body>
+    <div class="warn-space hidden hidden-warn">
+        <div class="warn">
+            <div class="warn-content">
+                <div class="warn-top">
+                    <span class="warn-title">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span en="Warning!">Aviso!</span>
+                    </span>
+                </div>
+                <div class="warn-middle">
+                    <div class="warn-text-space">O conteúdo do alerta ficará aqui.</div>
+                </div>
+                <div class="warn-bottom">
+                    <div class="warn-bottom-content">
+                        <button class="warn-ok" onclick="warning.close()">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="already-logged-space hidden">
+            <div class="already-logged">
+                <div class="already-logged-content">
+                    <div class="already-left" tabindex="0">
+                        <div class="already-left-text">
+                            <span class="already-title" en="You're already signed in.">Você já está conectado(a).</span>
+                            <span class="already-description">
+                                <span en="Click here to continue as ">Clique aqui para continuar como </span>
+                                <span class="already-name user-name">usuário</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="already-right">
+                        <button class="already-right-close" onclick="dontContinue()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-content">
+
+            <div class="fb-reg-space hidden-reg-space hidden">
+                <div class="fb-reg">
+                    <div class="fbr-content">
+                        <div class="fbr-top">
+                            <div class="fbr-top-content">
+                                <div class="fbr-title-space">
+                                    <h1 class="fbr-title vibrate25" en="Sign Up">Cadastre-se</h1>
+                                    <span class="fbr-description" en="It’s quick and easy.">É rápido e fácil.</span>
+                                </div>
+                                <div class="fbr-close-space">
+                                    <i class="fas fa-times fbr-close" title="Cancelar registro" en-attr="title" en="Cancel" onclick="signUp.close()"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fbr-middle">
+                            <div class="fbr-middle-content">
+                                <div class="reg-form">
+
+                                    <div class="rf-name-space rf-container">
+                                        <span class="rf-hint def-hint" en="Name">Nome</span>
+                                        <input type="text" class="rf-name def-input rf-required" placeholder="Nome real" en-attr="placeholder" en="Real name" name="Nome real">
+                                    </div>
+                                    <div class="rf-username-space rf-container">
+                                        <span class="rf-hint def-hint" en="Username">Nome de usuário</span>
+                                        <input type="text" class="rf-username def-input rf-required" placeholder="Nome de usuário" en-attr="placeholder" en="Username" onblur="signUp.validate.username()" name="Nome de usuário">
+                                    </div>
+                                    <div class="rf-password-space rf-container">
+                                        <span class="rf-hint def-hint" en="Password">Senha</span>
+                                        <div class="rf-password-div">
+                                            <input type="password" class="rf-password def-input rf-required" placeholder="Nova senha" en-attr="placeholder" en="New password" name="Senha">
+                                            <button class="rf-password-view def-button" title="Alternar visualização de senha" en-attr="title" en="Toggle password view" current-view="p" target="input.rf-password" onclick="passwordView(this)">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="rf-birth-space rf-container">
+                                        <span class="rf-hint def-hint" en="Birth date">Data de nascimento</span>
+                                        <div class="rf-date-space">
+                                            <input type="number" class="rf-bday rf-date rf-required" placeholder="Dia" placeholder="Dia" en-attr="placeholder" en="Day" name="Dia de nascimento">
+                                            <input type="number" class="rf-bmonth rf-date rf-required" en-attr="placeholder" placeholder="Mês" en="Month" name="Mês de nascimento">
+                                            <input type="number" class="rf-byear rf-date rf-required" en-attr="placeholder" placeholder="Ano" en="Year" name="Ano de nascimento">
+                                        </div>
+                                    </div>
+                                    <div class="rf-gender-space rf-container">
+                                        <span class="rf-hint def-hint" en="Gender">Gênero</span>
+                                        <div class="rf-gender-list">
+
+                                            <label for="rf-gn-m" class="rf-gender-label">
+                                                <input type="radio" name="gender" id="rf-gn-m" class="rf-gender" gender="m" checked>
+                                                <span en="Male">Masculino</span>
+                                            </label>
+                                            <label for="rf-gn-f" class="rf-gender-label">
+                                                <input type="radio" name="gender" id="rf-gn-f" class="rf-gender" gender="f">
+                                                <span en="Female">Feminino</span>
+                                            </label>
+                                            <label for="rf-gn-n" class="rf-gender-label">
+                                                <input type="radio" name="gender" id="rf-gn-n" class="rf-gender" gender="n">
+                                                <span en="I don't want to say">Prefiro não dizer</span>
+                                            </label>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fbr-bottom">
+                            <div class="fbr-terms-space">
+                                <span class="fbr-terms">
+                                    <span en="By clicking Sign Up, you agree to our ">Ao clicar em Cadastre-se, você concorda com nossos </span>
+                                    <span class="fbr-terms-link" en="Terms">Termos</span>,
+                                    <span class="fbr-terms-link" en="Data Policy">Política de Dados</span>
+                                    <span en="and">e</span>
+                                    <span class="fbr-terms-link" en="Cookies Policy">Política de Cookies</span>.
+                                    <span en="You may receive SMS Notifications from us and can opt out any time.">Você poderá receber notificações por SMS e cancelar isso quando quiser.</span>
+                                </span>
+                            </div>
+                            <div class="fbr-register-space">
+                                <div class="fbr-register-around">
+                                    <button class="fbr-register def-ripple" en="Sign Up" onclick="registerRequest()">Cadastre-se</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="fb-log-space">
+                <div class="fb-text-space">
+                    <div class="fb-title-space">
+                        <h1 class="fb-title">face in the book <span class="fb-version">renewed v5.1</span></h1>
+                    </div>
+                    <div class="fb-desc-space">
+                        <h2 class="fb-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+                    </div>
+                </div>
+                <div class="fb-form-space">
+                    <div class="fb-form">
+
+                        <div class="fb-form-top">
+                            <div class="fb-form-name-space fb-form-container">
+                                <span class="fb-hint def-hint" en="Username">Nome de usuário</span>
+                                <input type="text" class="fb-form-name def-input" placeholder="Nome de usuário"
+                                    en-attr="placeholder" en="Username">
+                            </div>
+                            <div class="fb-form-password-space fb-form-container">
+                                <span class="fb-hint def-hint" en="Password">Senha</span>
+                                <div class="fb-form-password-div">
+                                    <input type="password" class="fb-password def-input" placeholder="Senha"
+                                        en-attr="placeholder" en="Password">
+                                    <button class="fb-password-view def-button def-title" titulo="Alternar visualização da senha"
+                                        en-attr="titulo" en="Toggle password view" current-view="p" target="input.fb-password" onclick="passwordView(this)">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fb-form-middle">
+                            <div class="fb-form-login-space">
+                                <button class="fb-login vibrate25 def-ripple" en="Sign in" onclick="loginRequest()">Entrar</button>
+                            </div>
+                        </div>
+                        <div class="fb-form-bottom">
+                            <div class="fb-form-forgot-space">
+                                <span class="fb-forgot" en="Forgot your password?" onclick="forgot()">Esqueceu a senha?</span>
+                            </div>
+
+                            <div class="form-split"></div>
+
+                            <div class="fb-form-newaccount-space">
+                                <div class="fb-reg-btn-space">
+                                    <button class="fb-reg-btn vibrate25 def-ripple" en="Create new account" onclick="signUp.open()">Criar nova conta</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-lang-space">
+                <div class="page-language">
+                    <button class="page-lang def-title" titulo="Selecionar o idioma a ser traduzido" en-attr="titulo" en="Select the language to translate">
+                        <i class="fas fa-globe"></i>
+                        <span class="page-lang-text" en="Available languages">Idiomas disponíveis</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Ícones da página -->
+    <script src="https://kit.fontawesome.com/8e170bc822.js" crossorigin="anonymous"></script>
+
+    <!-- Scripts da página -->
+    <script src="../../common/scripts/get-time.js"></script>
+    <script src="../../common/scripts/redirect.js"></script>
+    <script src="../../common/scripts/params.js"></script>
+    <script src="../../common/scripts/database.js"></script>
+    <script src="../../common/scripts/warn.js"></script>
+    <script src="../../common/scripts/lang.js"></script>
+    <script src="../scripts/inicio-backend.js"></script>
+    <script src="../scripts/script.js"></script>
+    <script src="../../common/scripts/vibrate.js"></script>
+    <script src="../../common/scripts/def.js"></script>
+</body>
+
+</html>

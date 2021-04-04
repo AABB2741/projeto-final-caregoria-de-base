@@ -1,0 +1,262 @@
+<div class="menu-space hidden">
+    <div class="menu">
+        <div class="menu-content">
+            <div class="menu-header">
+                <div class="menu-header-content">
+                    <div class="menu-header-account-infos">
+                        <div class="menu-avatar-space">
+                            <img src="../files/default-avatar.png" class="menu-avatar drag">
+                        </div>
+                        <div class="menu-infos-space">
+                            <span class="menu-user-name def-user-name">Usuário</span>
+                            <div class="menu-actions-space">
+                                <span class="menu-change-user" en="Switch">Alternar</span>
+                                <span class="menu-logout" en="Sign out" onclick="backend.logout()">Sair</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-account-level-space">
+                        <div class="menu-account-level-text-space">
+                            <div class="menu-level-level">
+                                <span class="menu-level-around">
+                                    <span en="Level">Nível</span>
+                                    <span class="menu-level">0</span>
+                                </span>
+                                <span class="menu-level-xp-around">
+                                    <span class="menu-level-xp">0</span>
+                                    <span en="XP">EXP</span>
+                                </span>
+                            </div>
+                            <div class="menu-level-goal-space">
+                                <span class="menu-level-goal def-title" titulo="Meta" en-attr="titulo" en="Goal">100</span>
+                            </div>
+                        </div>
+                        <div class="menu-account-level-bar-space">
+                            <div class="menu-level-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-body">
+                <div class="menu-body-content">
+                    <div class="menu-settings-fast-access-space">
+                        <div class="menu-settings-fa" tabindex="0">
+                            <div class="msettings-box">
+                                <div class="msettings-box-content">
+                                    <div class="msettings-icon-space">
+                                        <i class="fas fa-cog msettings-icon"></i>
+                                    </div>
+                                    <div class="msettings-name-space">
+                                        <span class="msettings-name" en="Settings">Configurações</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-list-search-space">
+                        <div class="menu-list-search-content">
+                            <input type="text" class="menu-list-search" placeholder="Pesquisar configurações" en="Search settings" en-attr="title">
+                            <button class="menu-list-search-send">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="menu-list">
+
+                        <div class="mbox" tabindex="0">
+                            <div class="mbox-content">
+                                <div class="mbox-left">
+                                    <div class="mbox-icon-space">
+                                        <i class="fas fa-globe mbox-icon"></i>
+                                    </div>
+                                    <div class="mbox-name-space">
+                                        <span class="mbox-name">Lorem ipsum dolor sit amet.</span>
+                                    </div>
+                                </div>
+                                <div class="mbox-right">
+                                    <div class="mbox-arrow-space">
+                                        <i class="fas fa-chevron-right mbox-arrow"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mbox" tabindex="0">
+                            <div class="mbox-content">
+                                <div class="mbox-left">
+                                    <div class="mbox-icon-space"></div>
+                                    <div class="mbox-name-space"></div>
+                                </div>
+                                <div class="mbox-right">
+                                    <div class="mbox-arrow-space"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="menu-bottom">
+                <div class="menu-bottom-content">
+                    <button class="send-feedback" en="Send feedback">Enviar feedback</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="notifications-space hidden">
+    <div class="notifications">
+        <div class="notifications-header">
+            <div class="notifications-header-content">
+                <div class="notification-title-space">
+                    <h2 class="notification-title" en="Notifications">Notificações</h2>
+                </div>
+                <div class="notification-filter-space">
+                    <div class="notification-filter-content">
+                        <select class="notification-filter">
+                            <option value="new" en="🔥 Newest above">🔥 Recentes acima</option>
+                            <option value="old" en="🕒 Oldest above">🕒 Antigos acima</option>
+                        </select>
+                        <button class="notification-options def-title" titulo="Configurações de notificação"
+                            en="Notification settings" en-attr="titulo" onclick="notifications.settings.open()">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                    </div>
+                    <div class="notification-settings-space def-select" tabindex="0">
+                        <div class="notification-settings">
+                            <div class="notification-settings-header">
+                                <div class="notification-settings-title-space def-select-title">
+                                    <span class="notification-settings-title" en="Notification settings">Configurações de notificação</span>
+                                </div>
+                            </div>
+                            <div class="notification-settings-options">
+
+                                <div class="notsetbox def-select-option">
+                                    <div class="notsetbox-content">
+                                        <i class="fas fa-times def-select-option-icon"></i>
+                                        <span class="def-select-option-text" en="Clear">Limpar</span>
+                                    </div>
+                                </div>
+                                <div class="notsetbox def-select-option">
+                                    <div class="notsetbox-content">
+                                        <i class="fas fa-eye-slash def-select-option-icon"></i>
+                                        <span class="def-select-option-text" en="Hide">Esconder</span>
+                                    </div>
+                                </div>
+                                <div class="notsetbox def-select-option">
+                                    <div class="notsetbox-content">
+                                        <i class="fas fa-minus-circle def-select-option-icon"></i>
+                                        <span class="def-select-option-text" en="Silent">Silencioso</span>
+                                    </div>
+                                </div>
+                                <div class="notsetbox def-select-option">
+                                    <div class="notsetbox-content">
+                                        <i class="fas fa-ban def-select-option-icon"></i>
+                                        <span class="def-select-option-text" en="Block">Bloquear</span>
+                                    </div>
+                                </div>
+                                <div class="nosetbox def-select-option">
+                                    <div class="notsetbox-content">
+                                        <i class="fas fa-plus def-select-option-icon"></i>
+                                        <span class="def-select-option-text" en="More options">Mais opções</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="notification-split"></div>
+        <div class="notifications-body">
+            <div class="notifications-body-content">
+                <div class="notification-list">
+                    <span class="no-notifications" en="No notifications">Sem notificações</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-header-space" style="transform: translateY(0)">
+    <header class="page-header">
+        <div class="page-header-content">
+
+            <div class="header-left-space">
+                <div class="hl-content">
+                    <div class="hl-logo-space">
+                        <img src="../files/logo.png" alt="Logo" class="hl-logo drag" tabindex="0" c="0" onclick="seg.click(this)">
+                    </div>
+                    <div class="hl-search-space">
+                        <div class="hl-search-content">
+                            <input type="text" class="fb-search" placeholder="Procurando algo?" en-attr="placeholder"
+                                en="Looking for something?">
+                            <button class="fb-search-send">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        <div class="search-suggestions-space hidden" tabindex="0">
+                            <div class="search-suggestions">
+
+                                <div class="search-suggestion-topic-contents">
+                                    <div class="search-suggestion-topic">
+                                        <span class="search-suggestions-topic-name" en="From your history">Do
+                                            seu histórico</span>
+                                    </div>
+                                    <div class="search-suggestions">
+
+                                        <div class="ss">
+                                            <div class="ss-content">
+                                                <span class="ss-text"
+                                                    en="Settings: Change username">Configurações: Alterar nome
+                                                    de usuário</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-middle-space">
+                <div class="hm-content">
+                    <h3 class="page-subtitle">
+                        <span en="Welcome,">Boas vindas</span>
+                        <span class="def-user-name">Usuário</span>
+                        <span>! :)</span>
+                    </h3>
+                </div>
+            </div>
+            <div class="header-right-space">
+                <div class="header-notification-space def-title" titulo="Notificações" en-attr="titulo" en="Notifications"
+                    onclick="notifications.open()">
+                    <div class="header-notification-around">
+                        <i class="far fa-bell header-notification"></i>
+                    </div>
+                </div>
+                <div class="hr-content" onclick="menu.open()">
+                    <div class="header-profile-space">
+                        <div class="profile-infos-space">
+                            <div class="profile-infos">
+                                <span class="profile-name def-user-name">Usuário</span>
+                                <span class="profile-level-text">
+                                    <span en="Lvl ">Nvl </span>
+                                    <span class="profile-level">0</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="profile-photo-space">
+                            <img src="../files/default-avatar.png" class="profile-photo drag def-user-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+</div>

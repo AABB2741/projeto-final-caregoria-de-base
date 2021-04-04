@@ -1,0 +1,17 @@
+:root {
+    --bc: #282828; /* Background principal */
+    --hov: #494949; /* Sobreposição */
+    --bc-s: #121212; /* Background secundário */ 
+    --bc-t: #232323; /* Background terciário */
+    --cor: #ffffff; /* Cor do texto */
+    --feat: #1e90ff; /* Cor destaque */
+    --br: #ffffff; /* (Cor da borda) */
+    --desc: #c4c4c4; /* Cor de descrição */
+    --sel: #00cf00; /* Cor de seleção/correto */
+    --inblack: #000000; /* Cor de texto em locais claros */
+    --prim: #0000ff; /* Cor primária */
+    --sec: #00ffff; /* Cor secundária */
+    --thir: #ffff00; /* Cor terciária */
+    --qua: #a200ff; /* Cor quaternária */
+    --warn: #ff0000; /* Cor de aviso */
+}

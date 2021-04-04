@@ -1,0 +1,33 @@
+Geral
+	Nome real
+	Nome de usuário
+	Alterar data de nascimento
+	Redefinir para configurações padrão
+
+Segurança
+	Alterar senha
+	Contas alternativas
+	Histórico de login
+	
+Privacidade
+	Perfil
+		Exibir meu gênero
+		Exibir meu nome real
+		Exibir meus avanços
+		Exibir meu nível
+		Exibir minhas conquistas
+	Exigir solicitação antes de adicionar como amigo
+	Gerenciar distintivos
+	Permitir marcações
+
+Preferências
+	Exibir dicas
+	Exibir botões de ajuda
+
+Aparência
+	Meus estilos
+	Papel de parede
+
+Filtro
+	Usuários bloqueados
+	Palavras bloqueadas

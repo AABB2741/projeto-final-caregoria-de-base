@@ -1,0 +1,2044 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações - Face in the Book</title>
+
+    <!-- Ícone da guia -->
+    <link rel="icon" href="../../common/files/settings-logo.png">
+
+    <!-- Fontes da página -->
+    <div class="page-fonts" style="display: none !important;"></div>
+
+    <!-- Estilo da página -->
+    <link rel="stylesheet" href="../../common/styles/def.css">
+    <link rel="stylesheet" href="../../common/styles/root.css">
+    <link rel="stylesheet" href="../../common/styles/warn.css">
+    <link rel="stylesheet" href="../styles/settings.css">
+    <link rel="stylesheet" href="../../common/styles/achievement.css">
+    <link rel="stylesheet" href="../../common/styles/message.css">
+</head>
+
+<body>
+    <div class="fb-msg hidden-fb-msg">
+        <div class="fb-msg-content">
+            <div class="fb-msg-text">
+                <span>Boa noite para todos os brasileiros!</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="not-saved hidden">
+        <div class="not-saved-text">
+            <span en="Be careful! You have unsaved changes!">Cuidado! Você tem alterações que ainda não foram
+                salvas.</span>
+        </div>
+        <div class="not-saved-options">
+            <button class="def-great-button def-ripple" onclick="saveChanges()">
+                <i class="fas fa-check"></i>
+                <span en="Save">Salvar</span>
+            </button>
+            <button class="def-nwarn-button def-ripple" en="Cancel" onclick="cancelChanges()">Cancelar</button>
+        </div>
+    </div>
+
+    <div class="achievement hidden" text="Texto de fundo " en="Background text " en-attr="text" animation="0">
+        <div class="achievement-content">
+            <div class="achievement-face-space">
+                <div class="achievement-face">
+                    <div class="achievement-face-icon-space">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="achievement-face-text-space">
+                        <div class="achievement-face-title-space">
+                            <span class="achievement-face-title" en="Congrats title!">Título de comemoração!</span>
+                        </div>
+                        <div class="achievement-face-exp-space">
+                            <span class="achievement-face-exp-around">
+                                <span>+</span>
+                                <span class="achievement-face-exp">20</span>
+                                <span en="XP">EXP</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="achievement-get-space">
+                <div class="achievement-get">
+                    <div class="achievement-icon-space">
+                        <img src="https://pbs.twimg.com/profile_images/1289324739794735104/mQoHcZfq.jpg"
+                            class="achievement-icon">
+                    </div>
+                    <div class="achievement-text-space">
+                        <div class="achievement-title-space">
+                            <span class="achievement-title" en="The achievement title will be here.">O título da
+                                conquista ficará aqui.</span>
+                        </div>
+                        <div class="achievement-desc-space">
+                            <span class="achievement-desc" en="The achievement description will be here.">A
+                                descrição da conquista ficará aqui.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup's da página (devem ter a classe "page-popup-<nome da guia>") -->
+    <div class="page-popup-perfil-space def-popup-space hidden">
+        <div class="page-popup-perfil def-popup">
+            <div class="page-popup-perfil-content">
+                <div class="page-popup-perfil-header">
+                    <div class="page-popup-perfil-header-top def-popup-header centralize-header">
+                        <div class="page-popup-perfil-icon def-popup-icon">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="page-popup-perfil-title def-popup-title def-popup-text">
+                            <span en="Change profile photo">Alterar foto do perfil</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-popup-perfil-body def-popup-body">
+                    <div class="page-popup-perfil-text-up def-popup-ask">
+                        <span en="Enter a image URL...">Insira a URL de uma imagem...</span>
+                    </div>
+                    <div class="page-popup-perfil-input-space">
+                        <input type="text" class="page-popup-perfil-input def-biginput" placeholder="URL da imagem"
+                            en="Image URL" en-attr="placeholder">
+                    </div>
+                    <div class="page-popup-perfil-text-bottom def-popup-ask">
+                        <span en="...or select an image from gallery">...ou selecione uma imagem da galeria</span>
+                    </div>
+                    <div class="page-popup-perfil-gallery-space">
+                        <div class="page-popup-perfil-gallery">
+                            <div class="page-popup-perfil-gallery-item def-ripple">
+                                <img src="../../common/files/default-avatar.png" title="Título do negócio">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-popup-perfil-bottom def-popup-options">
+                    <button class="page-popup-perfil-confirm def-highlighted-button def-ripple" en="Confirm"
+                        onclick="tabfunPerfil.changeAvatar.setAvatar()">Confirmar</button>
+                    <button class="page-popup-perfil-cancel def-non-highlighted-button def-ripple" en="Cancel"
+                        onclick="tabfunPerfil.changeAvatar.closePopup()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="perfil-banner-space def-popup-space hidden">
+        <div class="perfil-banner def-popup">
+            <div class="perfil-banner-content">
+                <div class="perfil-banner-header def-popup-header centralize-header">
+                    <div class="perfil-banner-icon def-popup-icon">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <div class="perfil-banner-title def-popup-title def-popup-text">
+                        <span en="Change banner">Alterar banner</span>
+                    </div>
+                </div>
+                <div class="perfil-banner-body def-popup-body">
+                    <div class="perfil-banner-hint1 def-popup-ask">
+                        <span en="Enter a image URL...">Insira a URL de uma imagem...</span>
+                    </div>
+                    <div class="perfil-banner-input-space">
+                        <input type="text" class="perfil-banner-input def-biginput" placeholder="URL da imagem"
+                            en="Image URL" en-attr="placeholder">
+                    </div>
+                    <div class="perfil-banner-hint2 def-popup-ask">
+                        <span en="...or select an image from gallery">...ou selecione uma imagem da galeria</span>
+                    </div>
+                    <div class="perfil-banner-gallery-space">
+                        <div class="perfil-banner-gallery">
+                            <div class="perfil-banner-gallery-item def-ripple">
+                                <img src="../../common/files/default-banner.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="perfil-banner-bottom def-popup-options">
+                    <button class="perfil-banner-confirm def-highlighted-button def-ripple" en="Confirm"
+                        onclick="tabfunPerfil.changeBanner.setBanner()">Confirmar</button>
+                    <button class="perfil-banner-cancel def-non-highlighted-button def-ripple" en="Cancel"
+                        onclick="tabfunPerfil.changeBanner.closePopup()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fim dos popup's -->
+    <div class="content">
+        <div class="page-content">
+            <div class="page-left">
+                <div class="page-left-content">
+                    <div class="page-left-header">
+                        <div class="page-left-header-content">
+                            <div class="page-left-back">
+                                <i class="fas fa-arrow-left def-ripple"
+                                    onclick="voltar('../../main/pages/principal.html')"></i>
+                            </div>
+                            <div class="page-left-search-space">
+                                <input type="text" class="page-left-search" placeholder="Pesquisar" en="Search"
+                                    onfocus="botaoVoltar.mover()" onblur="botaoVoltar.desmover()" en-attr="placeholder">
+                                <button class="page-left-search-send def-ripple">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-left-body">
+                        <div class="page-left-body-content">
+                            <div class="page-tab-list def-tabs">
+                                <div class="settings-tab def-tab">
+                                    <div class="settings-tabicon def-tab-icon">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="settings-tabname def-tab-name">
+                                        <span>Este é apenas um teste.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-right">
+                <div class="page-right-content">
+                    <div class="page-right-header">
+                        <div class="page-right-header-content">
+                            <div class="page-right-header-title">
+                                <h1>Título da configuração</h1>
+                            </div>
+                            <div class="page-right-header-subtitle">
+                                <span en="Settings subtitle">Aqui será a descrição da configuração que o usuário está
+                                    acessando.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-right-body">
+                        <!-- prefixo estilização padrão de configurações: set-{tipo} -->
+                        <div class="page-right-body-content">
+
+                            <div class="setting-page" setting-id="finge">
+                                <div class="setting-page-content">
+                                    <!-- Aqui estarão listadas todas as configurações -->
+                                    <div class="set-tab-content" tab-name="teste">
+                                        <div class="set-topic-title">
+                                            <span en="Here will be all the configurators.">Aqui terá todos os
+                                                configuradores.</span>
+                                        </div>
+
+                                        <div class="set-topic-body">
+                                            <div class="set-cell">
+                                                <div class="set-left">
+                                                    <span>Interruptor</span>
+                                                </div>
+                                                <div class="set-right">
+                                                    <div class="def-toggle" active="false"></div>
+                                                </div>
+                                            </div>
+                                            <div class="set-cell">
+                                                <div class="set-left">
+                                                    <span>Selecionador</span>
+                                                </div>
+                                                <div class="set-right">
+                                                    <!-- Obs: Precisa ser nesta ordem -->
+                                                    <div class="set-select-button def-ripple def-select-trigger"
+                                                        target="div.set-select-option">
+                                                        <span>Peidei</span> <!-- < Aqui será o texto -->
+                                                        <i class="fas fa-chevron-down set-select-arrow"></i>
+                                                    </div>
+                                                    <div class="set-select-option def-select">
+                                                        <div class="def-select-title">Título do coiso</div>
+                                                        <div class="def-select-option">
+                                                            <i class="fas fa-fire-alt def-select-option-icon"></i>
+                                                            <span class="def-select-option-text">Apenas um teste</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="set-tab-content" tab-name="geral">
+                                        <div class="cleargal-space def-popup-space hidden">
+                                            <div class="cleargal def-popup">
+                                                <div class="cleargal-content">
+                                                    <div class="def-popup-header">
+                                                        <div class="def-popup-icon">
+                                                            <i class="fas fa-trash"></i>
+                                                        </div>
+                                                        <div class="def-popup-text">
+                                                            <div class="def-popup-title">
+                                                                <span en="Clear gallery?">Esvaziar galeria?</span>
+                                                            </div>
+                                                            <div class="def-popup-desc">
+                                                                <span en="When you clear the gallery, you will be not able to use its images until you add it again."
+                                                                    >Ao esvaziar a galeria, você não poderá mais utilizar as imagens adicionadas até você adicioná-las novamente.</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="def-popup-ask def-popup-options">
+                                                        <span en="Are you sure that you want to continue?">Tem certeza de que deseja continuar?</span>
+                                                    </div>
+                                                    <div>
+                                                        <button class="cleargal-confirm def-warn-button def-ripple" onclick="tabfunGeral.galeria.limpar()">
+                                                            <i class="fas fa-trash"></i>
+                                                            <span en="Clear gallery">Esvaziar galeria</span>
+                                                        </button>
+                                                        <button class="cleargal-cancel def-nwarn-button def-ripple" onclick="tabfunGeral.galeria.fecharPopup()">
+                                                            <span en="Cancel">Cancelar</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="set-tab-content-content">
+                                            <div
+                                                class="general-gallery-clear set-button set-cell def-ripple warn-color" onclick="tabfunGeral.galeria.abrirPopup()">
+                                                <div class="set-left">
+                                                    <span en="Clear gallery media">Esvaziar mídia da galeria</span>
+                                                </div>
+                                                <div class="set-right">
+                                                    <i class="fas fa-chevron-right"></i>
+                                                </div>
+                                            </div>
+                                            <div class="set-split"></div>
+                                            <div class="general-real-name set-topic">
+                                                <div class="set-topic-title">
+                                                    <span en="Personal information management">Gerenciamento de
+                                                        informações pessoais</span>
+                                                </div>
+                                                <div class="general-real-topic-body set-topic-body">
+                                                    <span class="def-hint" en="Real name">Nome real</span>
+                                                    <div class="general-real-topic-body-content">
+                                                        <input type="text" class="general-real-name-input def-biginput"
+                                                            placeholder="Nome real" en="Real name"
+                                                            en-attr="placeholder" onblur="tabfunGeral.nome.definir(this.value)">
+                                                        <button
+                                                            class="general-real-name-reset def-highlighted-button def-ripple" onclick="tabfunGeral.nome.redef()">
+                                                            <i class="fas fa-redo"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="general-birth-topic set-topic-bottom">
+                                                    <div class="general-birth-topic-content">
+                                                        <span class="def-hint" en="Birthday">Data de nascimento</span>
+                                                        <div class="general-birth-input-space">
+                                                            <input type="number" id="birth-day"
+                                                                class="general-birth-input def-biginput"
+                                                                placeholder="Dia" en="Day" en-attr="placeholder" v="dia" onblur="tabfunGeral.data.set()">
+                                                            <input type="number" id="birth-month"
+                                                                class="general-birth-input def-biginput"
+                                                                placeholder="Mês" en="Month" en-attr="placeholder" v="mes" onblur="tabfunGeral.data.set()">
+                                                            <input type="number" id="birth-year"
+                                                                class="general-birth-input def-biginput"
+                                                                placeholder="Ano" en="Year" en-attr="placeholder" v="ano" onblur="tabfunGeral.data.set()">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="set-tab-content" tab-name="perfil">
+                                        <div class="set-tab-content-content">
+                                            <div class="set-profile-display">
+                                                <div class="set-profile-title set-topic-title">
+                                                    <span en="Profile display options">Opções de exibição do
+                                                        perfil</span>
+                                                </div>
+                                                <div class="set-cell">
+                                                    <div class="set-left">
+                                                        <span en="Show achievements">Exibir conquistas</span>
+                                                    </div>
+                                                    <div class="set-right">
+                                                        <div class="show-achievements-toggler def-toggle" active="true"
+                                                            onclick="tabfunPerfil.showAchievements(this)"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="middle-split"></div>
+                                                <div class="set-post-badges set-cell">
+                                                    <div class="set-left">
+                                                        <span en="Show my badges">Exibir meus distintivos</span>
+                                                    </div>
+                                                    <div class="set-right">
+                                                        <div class="def-toggle show-badges-toggler" active="true"
+                                                            onclick="tabfunPerfil.showBadges(this)"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="middle-split"></div>
+                                                <div class="set-post-visibility set-cell">
+                                                    <div class="set-left">
+                                                        <span en="Show my posts only for...">Exibir minhas postagens
+                                                            somente para...</span>
+                                                    </div>
+                                                    <div class="set-right">
+                                                        <div class="set-post-visibility-button set-select-button def-ripple def-select-trigger"
+                                                            target="div.set-select-post-visibility">
+                                                            <span class="set-post-visibility-select-text"
+                                                                en="Everyone">Todo mundo</span>
+                                                            <i class="fas fa-chevron-down"></i>
+                                                        </div>
+                                                        <div class="set-select-post-visibility def-select">
+                                                            <div class="def-select-title">
+                                                                <span en="Who can see your posts?">Quem poderá ver suas
+                                                                    postagens?</span>
+                                                            </div>
+                                                            <div class="setsel-option def-select-option"
+                                                                optionvalue="todos" optionname="Todo mundo"
+                                                                en="Everyone" en-attr="optionname"
+                                                                onclick="tabfunPerfil.showPosts(this)">
+                                                                <div class="setsel-option-content">
+                                                                    <i class="fas fa-users"></i>
+                                                                    <span en="Everyone">Todo mundo</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="setsel-option def-select-option"
+                                                                optionvalue="amigos" optionname="Apenas amigos"
+                                                                en="Only friends" en-attr="optionname"
+                                                                onclick="tabfunPerfil.showPosts(this)">
+                                                                <div class="setsel-option-content">
+                                                                    <i class="fas fa-user"></i>
+                                                                    <span en="Only friends">Apenas amigos</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="setsel-option def-select-option"
+                                                                optionvalue="none" optionname="Somente eu" en="Only me"
+                                                                en-attr="optionname"
+                                                                onclick="tabfunPerfil.showPosts(this)">
+                                                                <div class="setsel-option-content">
+                                                                    <i class="fas fa-times"></i>
+                                                                    <span en="Only me">Somente eu</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="middle-split"></div>
+                                                <div class="set-bioview set-cell">
+                                                    <div class="set-left">
+                                                        <span en="Show about me only for...">Mostrar sobre mim somente
+                                                            para...</span>
+                                                    </div>
+                                                    <div class="set-right">
+                                                        <div class="set-bioview-select-button set-select-button def-select-trigger def-ripple"
+                                                            target="div.set-bioview-select">
+                                                            <span class="set-bio-visibility-text" en="Everyone">Todo
+                                                                mundo</span>
+                                                            <i class="fas fa-chevron-down"></i>
+                                                        </div>
+                                                        <div class="set-bioview-select def-select">
+                                                            <div class="def-select-title">
+                                                                <span en="Who can read about you?">Quem poderá ler sobre
+                                                                    você?</span>
+                                                            </div>
+                                                            <div class="set-bioview-option def-select-option"
+                                                                optionvalue="todos" optionname="Todo mundo"
+                                                                en="Everyone" en-attr="optionname"
+                                                                onclick="tabfunPerfil.showBio(this)">
+                                                                <div class="set-bioview-option-content">
+                                                                    <i class="fas fa-users"></i>
+                                                                    <span en="Everyone">Todo mundo</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="set-bioview-option def-select-option"
+                                                                optionvalue="amigos" optionname="Apenas amigos"
+                                                                en="Only friends" en-attr="optionname"
+                                                                onclick="tabfunPerfil.showBio(this)">
+                                                                <div class="set-bioview-option-content">
+                                                                    <i class="fas fa-user"></i>
+                                                                    <span en="Only friends">Apenas amigos</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="set-bioview-option def-select-option"
+                                                                optionvalue="none" optionname="Somente eu" en="Only me"
+                                                                en-attr="optionname"
+                                                                onclick="tabfunPerfil.showBio(this)">
+                                                                <div class="set-bioview-option-content">
+                                                                    <i class="fas fa-times"></i>
+                                                                    <span en="Only me">Somente eu</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="middle-split"></div>
+                                                <div class="set-post-manage-badges set-cell set-button def-ripple">
+                                                    <div class="set-left">
+                                                        <span en="Manage badges...">Gerenciar distintivos...</span>
+                                                    </div>
+                                                    <div class="set-right">
+                                                        <i class="fas fa-chevron-right"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="set-profile-customize">
+                                                <div class="set-topic-title">
+                                                    <span en="Customize">Personalizar</span>
+                                                </div>
+
+                                                <div class="set-profile-custom-name-space">
+                                                    <span class="def-hint" en="Username">Nome de usuário</span>
+                                                    <div class="set-input">
+                                                        <input type="text" class="set-profile-name-input"
+                                                            placeholder="Insira o nome de usuário"
+                                                            en="Enter the username" en-attr="placeholder"
+                                                            onblur="tabfunPerfil.setName(this.value)">
+                                                        <button class="def-ripple" onclick="tabfunPerfil.resetName()">
+                                                            <i class="fas fa-redo"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="set-profile-custom-photos-space">
+                                                    <div class="stcp-space">
+                                                        <div class="stcp-left">
+                                                            <img src="../../common/files/default-avatar.png"
+                                                                class="stpc-image">
+                                                        </div>
+                                                        <div class="stcp-right">
+                                                            <div class="stcp-right-top">
+                                                                <span en="Profile photo">Foto de perfil</span>
+                                                            </div>
+                                                            <div class="stcp-right-options">
+                                                                <button
+                                                                    class="stcp-change def-highlighted-button def-ripple"
+                                                                    onclick="tabfunPerfil.changeAvatar.openPopup()">
+                                                                    <i class="fas fa-file-image"></i>
+                                                                    <span en="Change">Alterar</span>
+                                                                </button>
+                                                                <button class="stcp-remove def-nwarn-button def-ripple"
+                                                                    onclick="tabfunPerfil.changeAvatar.removeAvatar()">
+                                                                    <i class="fas fa-trash"></i>
+                                                                    <span en="Remove">Remover</span>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="stcb-space">
+                                                        <div class="stcb-left">
+                                                            <img src="../../common/files/default-banner.png"
+                                                                alt="Imagem não encontrada." class="stcb-image">
+                                                        </div>
+                                                        <div class="stcb-right">
+                                                            <div class="stcb-right-top">
+                                                                <span>Banner</span>
+                                                            </div>
+                                                            <div class="stcb-right-options">
+                                                                <button
+                                                                    class="stcb-change def-highlighted-button def-ripple"
+                                                                    onclick="tabfunPerfil.changeBanner.openPopup()">
+                                                                    <i class="fas fa-file-image"></i>
+                                                                    <span en="Change">Alterar</span>
+                                                                </button>
+                                                                <button class="stcb-remove def-nwarn-button def-ripple"
+                                                                    onclick="tabfunPerfil.changeBanner.removeBanner()">
+                                                                    <i class="fas fa-trash"></i>
+                                                                    <span en="Remove">Remover</span>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="set-profile-custom-bio-space">
+                                                    <div class="set-profile-custom-bio-title set-topic-subtitle">
+                                                        <span en="About you">Sobre você</span>
+                                                    </div>
+                                                    <div class="set-profile-custom-bio-around">
+                                                        <div class="set-profile-custom-bio-top">
+                                                            <div class="set-profile-custom-bio-clear-space">
+                                                                <button
+                                                                    class="set-profile-custom-bio-clear def-nwarn-button def-ripple"
+                                                                    onclick="tabfunPerfil.clearBio()">
+                                                                    <i class="fas fa-times"></i>
+                                                                    <span en="Clear">Esvaziar</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="set-profile-custom-bio-count-space">
+                                                                <span class="set-profile-custom-bio-count">0</span><span
+                                                                    class="set-profile-custom-bio-count-after">/1000</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="set-profile-custom-bio-body">
+                                                            <textarea cols="30" rows="10"
+                                                                class="set-profile-custom-bio-type"
+                                                                placeholder="Conte para o mundo quem é você..."
+                                                                en="Tell the world who are you..." en-attr="placeholder"
+                                                                oninput="tabfunPerfil.countChars()"></textarea>
+                                                        </div>
+                                                        <div class="set-profile-custom-bio-bottom">
+                                                            <button
+                                                                class="set-profile-custom-bio-confirm def-highlighted-button def-ripple"
+                                                                onclick="tabfunPerfil.setBio()">
+                                                                <span en="Confirm">Confirmar</span>
+                                                            </button>
+                                                            <button
+                                                                class="set-profile-custom-bio-reset def-non-highlighted-button def-ripple"
+                                                                onclick="tabfunPerfil.resetBio()">
+                                                                <span en="Cancel">Cancelar</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="set-tab-content" tab-name="seguranca">
+                                        <div class="delacc-space def-popup-space hidden">
+                                            <div class="delacc def-popup">
+                                                <div class="delacc-content">
+                                                    <div class="def-popup-header">
+                                                        <div class="def-popup-icon">
+                                                            <i class="fas fa-suitcase-rolling"></i>
+                                                        </div>
+                                                        <div class="def-popup-text">
+                                                            <div class="def-popup-title">
+                                                                <span en="Packing...">Fazendo as malas...</span>
+                                                            </div>
+                                                            <div class="def-popup-desc">
+                                                                <span en="Sorry we didn't exceed your expectations of when you decided to join Face in the Book"
+                                                                    >Desculpe por nós não superarmos suas espectativas de quando você decidiu entrar no Face in the Book...</span>
+                                                                <br>
+                                                                <span en="But this is not goodbye. Know that if you change your mind, we will always be waiting for you with open arms."
+                                                                    >Mas isso não é um adeus. Saiba que se caso mudar de ideia, estaremos sempre te esperando de braços abertos.</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="def-popup-body">
+                                                        <div class="def-popup-ask">
+                                                            <span en="For security questions, we need you to confirm your password before going."
+                                                                >Por questões de segurança, precisamos que você confirme a sua senha antes de partir.</span>
+                                                        </div>
+                                                        <div class="delacc-password-space">
+                                                            <input type="password" class="delacc-password def-input" placeholder="Confirme sua senha" en="Confirm your password" en-attr="placeholder">
+                                                        </div>
+                                                    </div>
+                                                    <div class="def-popup-options">
+                                                        <button class="delacc-confirm def-warn-button def-ripple" onclick="tabfunSeg.delAccount.confirm()">
+                                                            <i class="fas fa-times"></i>
+                                                            <span en="Delete my account">Excluir minha conta</span>
+                                                        </button>
+                                                        <button class="delacc-cancel def-non-highlighted-button def-ripple" onclick="tabfunSeg.delAccount.close()">
+                                                            <span en="Cancel">Cancelar</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="altadd-space def-popup-space hidden">
+                                            <div class="altadd def-popup">
+                                                <div class="altadd-content">
+                                                    <div class="def-popup-header centralize-header">
+                                                        <div class="altadd-icon def-popup-icon">
+                                                            <i class="fas fa-user-plus"></i>
+                                                        </div>
+                                                        <div class="def-popup-title def-popup-text">
+                                                            <span en="Add user">Adicionar usuário</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="def-popup-body">
+                                                        <div class="altadd-name-topic">
+                                                            <span class="def-hint" en="Username">Nome de usuário</span>
+                                                            <div class="altadd-input-space">
+                                                                <input type="text" class="altadd-username def-input" placeholder="Nome de usuário" en="Username" en-attr="placeholder">
+                                                            </div>
+                                                        </div>
+                                                        <div class="altadd-password-topic">
+                                                            <span class="def-hint" en="Password">Senha</span>
+                                                            <div class="altadd-password-space altadd-input-space">
+                                                                <input type="password" class="altadd-password def-input" placeholder="Senha" en="Password" en-attr="placeholder">
+                                                                <button class="altadd-password-view def-button" onclick="tabfunSeg.alts.passView(this)" view="p">
+                                                                    <i class="fas fa-eye"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="def-popup-options">
+                                                        <button class="def-highlighted-button def-ripple" onclick="tabfunSeg.alts.add()">
+                                                            <i class="fas fa-plus"></i>
+                                                            <span en="Add account">Adicionar conta</span>
+                                                        </button>
+                                                        <button class="def-non-highlighted-button def-ripple" en="Cancel" onclick="tabfunSeg.alts.close()">Cancelar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="set-tab-content-content">
+                                            <div class="set-security-topic">
+                                                <div class="set-security-topic-content">
+                                                    <div class="set-topic-title">
+                                                        <span en="Account settings">Configurações de conta</span>
+                                                    </div>
+                                                    <div class="set-topic-body">
+                                                        <div class="security-topic-space">
+                                                            <div class="security-topic-content">
+                                                                <span class="def-hint" en="Password">Alterar senha</span>
+                                                                <div class="security-password-input-space">
+                                                                    <input type="password"
+                                                                        class="security-password-input def-biginput"
+                                                                        placeholder="Digite a nova senha" en="Type your new password"
+                                                                        en-atrr="placeholder" onblur="tabfunSeg.setPassword(this)">
+                                                                    <button
+                                                                        class="security-password-view def-highlighted-button def-ripple" onclick="tabfunSeg.passwordView(this)" view="p">
+                                                                        <i class="fas fa-eye"></i>
+                                                                    </button>
+                                                                    <button class="security-password-reset def-highlighted-button def-ripple" onclick="tabfunSeg.resetPassword()">
+                                                                        <i class="fas fa-redo"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="security-topic-accounts security-topic-space">
+                                                            <div class="security-topic-content">
+                                                                <span class="def-hint" en="Alternative accounts">Contas
+                                                                    alternativas</span>
+                                                                <div class="set-cell">
+                                                                    <div class="set-left">
+                                                                        <button
+                                                                            class="security-alt-add def-bigbutton def-ripple" onclick="tabfunSeg.alts.open()">
+                                                                            <i class="fas fa-plus"></i>
+                                                                            <span en="Add an account">Adicionar uma
+                                                                                conta</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="set-right">
+                                                                        <button
+                                                                            class="security-alt-delete def-bigbutton def-ripple warn-color" onclick="tabfunSeg.alts.removeAll()">
+                                                                            <i class="fas fa-trash"></i>
+                                                                            <span en="Remove all accounts">Remover todas
+                                                                                as contas</span>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="security-alt">
+                                                                    <!-- 
+                                                                        <div class="security-alt-list-noaccounts">
+                                                                            <span en="You don't have alternative accounts.">Você não tem contas alternativas.</span>
+                                                                        </div>
+                                                                     -->
+                                                                    <div class="security-alt-list">
+                                                                        <div class="sec-alt-account">
+
+                                                                            <div class="sec-alt-account-box" style="background: url('https://yt3.ggpht.com/ytc/AAUvwnjRcohPeIBxweJI_CEr6YdMkKJNFwg-0NLMDdu67w=s900-c-k-c0x00ffffff-no-rj')">
+                                                                                <div class="sec-alt-account-box-content">
+                                                                                    <div class="sec-alt-account-box-header">
+                                                                                        <div class="sec-alt-account-box-header-content">
+                                                                                            <div class="sec-alt-account-box-image-space">
+                                                                                                <img src="../../common/files/default-avatar.png" class="sec-alt-account-box-image">
+                                                                                            </div>
+                                                                                            <div class="sec-alt-account-box-infos-space">
+                                                                                                <div class="sec-alt-account-box-name-space">
+                                                                                                    <span>Joãzinho</span>
+                                                                                                </div>
+                                                                                                <div class="sec-alt-account-box-desc-space">
+                                                                                                    <span>Oi, gosto de jogar fortnite</span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="sec-alt-account-box-body">
+                                                                                        <span en="Added at">Adicionado em</span>
+                                                                                        <span class="sec-alt-account-added-time">25/05/2005</span>
+                                                                                    </div>
+                                                                                    <div class="sec-alt-account-box-bottom">
+                                                                                        <button class="sec-alt-account-connect def-great-button def-ripple">
+                                                                                            <i class="fas fa-sign-in-alt"></i>
+                                                                                            <span en="Connect">Conectar-se</span>
+                                                                                        </button>
+                                                                                        <button class="sec-alt-account-remove-select def-warn-button def-ripple">
+                                                                                            <i class="fas fa-times"></i>
+                                                                                            <span en="Remove">Remover (aparecer apenas quando clicar em "remover contas...")</span>
+                                                                                        </button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="set-split"></div>
+                                                        <div class="security-topic-space">
+                                                            <div class="security-topic-content">
+                                                                <div
+                                                                    class="security-delaccount set-button set-cell warn-color def-ripple" onclick="tabfunSeg.delAccount.open()">
+                                                                    <div class="set-left">
+                                                                        <span en="Delete my account">Excluir minha
+                                                                            conta</span>
+                                                                    </div>
+                                                                    <div class="set-right">
+                                                                        <i class="fas fa-chevron-right"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="set-tab-content" tab-name="privacidade">
+                                        <div class="set-tab-content-content">
+                                            <div class="priv-topic">
+                                                <div class="set-topic-title">
+                                                    <span en="Privacity options">Opções de privacidade</span>
+                                                </div>
+                                                <div class="set-topic-body priv-topic-body">
+                                                    <div class="priv-body-topic-content">
+                                                        <div class="set-cell">
+                                                            <div class="set-left">
+                                                                <span en="Allow mentions in posts">Permitir menções em
+                                                                    postagens</span>
+                                                            </div>
+                                                            <div class="set-right">
+                                                                <div class="priv-mention-toggle def-toggle"
+                                                                    active="true"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="set-split"></div>
+                                                        <div class="set-cell">
+                                                            <div class="set-left">
+                                                                <span en="Who can visit my page">Quem pode visitar minha
+                                                                    página</span>
+                                                            </div>
+                                                            <div class="set-right">
+                                                                <div class="priv-visit-select-button set-select-button def-select-trigger def-ripple"
+                                                                    target="div.priv-visit-select">
+                                                                    <span en="Everyone">Todo mundo</span>
+                                                                    <i class="fas fa-chevron-down"></i>
+                                                                </div>
+                                                                <div class="priv-visit-select def-select">
+                                                                    <div class="def-select-title">
+                                                                        <span en="Who can see your page?">Quem poderá
+                                                                            ver sua página?</span>
+                                                                    </div>
+                                                                    <div class="priv-select-option def-select-option"
+                                                                        optionvalue="todos" optionname="Todo mundo"
+                                                                        en="Everyone" en-attr="optionname">
+                                                                        <div class="priv-select-option-content">
+                                                                            <i class="fas fa-users"></i>
+                                                                            <span en="Everyone">Todo mundo</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="priv-select-option def-select-option"
+                                                                        optionvalue="amigos" optionname="Todo mundo"
+                                                                        en="Everyone" en-attr="optionname">
+                                                                        <div class="priv-select-option-content">
+                                                                            <i class="fas fa-user"></i>
+                                                                            <span en="Only friends">Apenas amigos</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="priv-select-option def-select-option"
+                                                                        optionvalue="none" optionname="Todo mundo"
+                                                                        en="Everyone" en-attr="optionname">
+                                                                        <div class="priv-select-option-content">
+                                                                            <i class="fas fa-times"></i>
+                                                                            <span en="Only me">Somente eu</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="set-tab-content" tab-name="preferencias">
+                                        <div class="set-tab-content-content">
+                                            <div class="pref-topic">
+                                                <div class="set-topic-title">
+                                                    <span en="Preferences options">Opções de preferências</span>
+                                                </div>
+                                                <div class="set-topic-body pref-topic-body">
+                                                    <div class="pref-topic-body-content">
+                                                        <div class="set-cell">
+                                                            <div class="set-left">
+                                                                <span en="Show help buttons">Exibir botões de
+                                                                    ajuda</span>
+                                                            </div>
+                                                            <div class="set-right">
+                                                                <div class="pref-help-toggle def-toggle" active="false">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="set-split"></div>
+                                                        <div class="set-cell">
+                                                            <div class="set-left">
+                                                                <span en="Show confirm messages from system">Exibir
+                                                                    mensagens de confirmação do sistema</span>
+                                                            </div>
+                                                            <div class="set-right">
+                                                                <div class="pref-msg-toggle def-toggle" active="true">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="set-split"></div>
+                                                        <div class="set-cell">
+                                                            <div class="set-left">
+                                                                <span en="See social list">Ver lista social</span>
+                                                            </div>
+                                                            <div class="set-right">
+                                                                <div class="pref-social-toggle def-toggle"
+                                                                    active="true"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="set-split"></div>
+                                                        <div class="set-cell">
+                                                            <div class="set-left">
+                                                                <span en="Confirm post exclusion">Confirmar exclusão de
+                                                                    postagens</span>
+                                                            </div>
+                                                            <div class="set-right">
+                                                                <div class="pref-exclusion-toggle def-toggle"
+                                                                    active="true"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="set-split"></div>
+                                                        <div class="set-cell">
+                                                            <div class="set-left">
+                                                                <span en="See emojis">Ver emojis</span>
+                                                            </div>
+                                                            <div class="set-right">
+                                                                <div class="pref-emoji-toggle def-toggle" active="true">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="set-split"></div>
+                                                        <div class="set-cell">
+                                                            <div class="set-left">
+                                                                <span en="Language preferences">Preferência de
+                                                                    idioma</span>
+                                                            </div>
+                                                            <div class="set-right">
+                                                                <div class="pref-lang-select-button def-select-trigger def-ripple set-select-button" target="div.pref-lang-select">
+                                                                    <span>Português (Brasil)</span>
+                                                                    <i class="fas fa-chevron-down"></i>
+                                                                </div>
+                                                                <div class="pref-lang-select def-select">
+                                                                    <div class="def-select-title">
+                                                                        <span en="Select the display language">Selecione o idioma de exibição</span>
+                                                                    </div>
+                                                                    <div class="pref-lang-option def-select-option" optionvalue="pt" optionname="Português (Brasil)" en="Portuguese (Brazil)" en-attr="optionname" onclick="tabfunPref.idioma.set(this)">
+                                                                        <div class="pref-lang-option-content">
+                                                                            <i class="fas fa-globe"></i>
+                                                                            <span en="Portuguese (Brazil)">Português (Brasil)</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="pref-lang-option def-select-option" optionvalue="en" optionname="Inglês (EUA)" en="English (USA)" en-attr="optionname" onclick="tabfunPref.idioma.set(this)">
+                                                                        <div class="pref-lang-option-content">
+                                                                            <i class="fas fa-globe"></i>
+                                                                            <span en="English (USA)">Inglês (EUA)</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="pref-lang-option def-select-option" optionvalue="auto" optionname="Automático" en="Auto" en-attr="optionname" onclick="tabfunPref.idioma.set(this)">
+                                                                        <div class="pref-lang-option-content">
+                                                                            <i class="fas fa-globe"></i>
+                                                                            <span en="Auto">Automático</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="set-tab-content" tab-name="estatisticas">
+                                        <div class="set-tab-content-content">
+                                            <div class="stats-topic set-topic">
+                                                <div class="stats-topic-title set-topic-title">
+                                                    <span en="My advancements">Meus avanços</span>
+                                                </div>
+                                                <div class="stats-topic-body set-topic-body">
+                                                    <div class="stats-topic-body-content">
+                                                        <div class="stats-list">
+
+                                                            <div class="stat-box">
+                                                                <div class="stat-box-content">
+                                                                    <div class="stat-box-left">
+                                                                        <div class="stat-box-name">
+                                                                            <span en="Advancement name">Nome do
+                                                                                avanço</span>
+                                                                        </div>
+                                                                        <div class="stat-box-desc">
+                                                                            <span en="Advancement description">Descrição
+                                                                                do avanço</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="stat-box-right">
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stats-topic set-topic stat-topic-achievements">
+                                                <div class="stats-topic-content">
+                                                    <div class="stats-topic-header set-topic-header">
+                                                        <div class="set-topic-title">
+                                                            <span en="My achievements">Minhas conquistas</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stats-topic-body set-topic-body">
+                                                        <div class="stats-topic-body-content">
+                                                            <div class="stats-topic-achievement-list">
+
+                                                                <div class="achievement-box">
+                                                                    <div class="achievement-box-content">
+                                                                        <div class="achievement-left">
+                                                                            <div class="achievement-image-space">
+                                                                                <img
+                                                                                    src="../../common/files/default-avatar.png">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="achievement-right">
+                                                                            <div class="achievement-stats-title-space">
+                                                                                <span en="Achievement title">Título da
+                                                                                    conquista</span>
+                                                                            </div>
+                                                                            <div class="achievement-stats-desc-space">
+                                                                                <span
+                                                                                    en="Achievement description">Descrição
+                                                                                    da conquista</span>
+                                                                            </div>
+                                                                            <div class="achievement-gettime-space">
+                                                                                <span en="Obtained at">Obtido em</span>
+                                                                                <span>25/05/2005</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stats-topic set-topic stats-topic-friendship">
+                                                <div class="stats-topic-friendship-content">
+                                                    <div class="stats-topic-friend-title set-topic-title">
+                                                        <span en="My friendships">Minhas amizades</span>
+                                                    </div>
+                                                    <div class="stats-topic-friend-body set-topic-body">
+                                                        <div class="stats-topic-friend-body-content">
+                                                            <!-- 
+                                                                <div class="stats-topic-no-friends">
+                                                                    <span en="You don't have friends. So sad :(">Você não tem amigos. Que triste :(</span>
+                                                                </div>
+                                                             -->
+                                                            <div class="stats-topic-friend-list">
+
+                                                                <div class="friendship-box"
+                                                                    style="background: url('https://imageproxy.ifunny.co/crop:x-20,resize:640x,quality:90x75/images/2b95dd17214e60c3dc085cfbd7b5a3c0d75e80244e5ffefb436ec9a8d22ac727_1.jpg')">
+                                                                    <div class="friendship-box-content">
+                                                                        <div class="friendship-box-top">
+                                                                            <div class="friendship-box-user-infos">
+                                                                                <div class="friendship-box-image-space">
+                                                                                    <img
+                                                                                        src="../../common/files/default-avatar.png">
+                                                                                </div>
+                                                                                <div class="friendship-box-info-space">
+                                                                                    <div
+                                                                                        class="friendship-box-name-space">
+                                                                                        <span>Nome do usuário</span>
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="friendship-box-desc-space">
+                                                                                        <span>Sobre o usuário</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="friendship-box-bottom">
+                                                                            <span class="friendship-box-since-around">
+                                                                                <span class="friendship-box-since-text"
+                                                                                    en="Friends since">Amigos
+                                                                                    desde</span>
+                                                                                <span
+                                                                                    class="friendship-box-since-date">25/05/2005</span>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stats-topic set-topic stats-topic-journey">
+                                                <div class="stats-topic-journey-content">
+                                                    <div class="stats-topic-journey-title set-topic-title">
+                                                        <span en="My journey">Minha jornada</span>
+                                                    </div>
+                                                    <div class="stats-topic-journey-body set-topic-body">
+                                                        <div class="stats-topic-journey-body-content">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="set-tab-content" tab-name="social">
+                                        <div class="set-tab-content-content">
+                                            <div class="set-cell">
+                                                <div class="set-left">
+                                                    <span en="Block friend requests">Bloquear solicitações de
+                                                        amizade</span>
+                                                </div>
+                                                <div class="set-right">
+                                                    <div class="social-block-toggle def-toggle" active="false"></div>
+                                                </div>
+                                            </div>
+                                            <div class="set-split"></div>
+                                            <div class="set-cell">
+                                                <div class="set-left">
+                                                    <span en="Do not suggest me">Não me sugerir</span>
+                                                </div>
+                                                <div class="set-right">
+                                                    <div class="social-sug-toggle def-toggle" active="false"></div>
+                                                </div>
+                                            </div>
+                                            <div class="set-split"></div>
+                                            <div class="social-cancel-requests set-button set-cell def-ripple">
+                                                <div class="set-left">
+                                                    <span en="Cancel all pending sent friend requests">Cancelar
+                                                        todas as solicitações pendentes enviadas</span>
+                                                </div>
+                                                <div class="set-right">
+                                                    <i class="fas fa-chevron-right"></i>
+                                                </div>
+                                            </div>
+                                            <div class="set-split"></div>
+                                            <div class="social-decline-requests set-button set-cell def-ripple">
+                                                <div class="set-left">
+                                                    <span en="Decline all pending received friends requests">Rejeitar
+                                                        todas as solicitações pendentes recebidas</span>
+                                                </div>
+                                                <div class="set-right">
+                                                    <i class="fas fa-chevron-right"></i>
+                                                </div>
+                                            </div>
+                                            <div class="set-split"></div>
+                                            <div
+                                                class="social-remove-friends set-button set-cell def-ripple warn-color">
+                                                <div class="set-left">
+                                                    <span en="Remove all friends">Remover todos os amigos</span>
+                                                </div>
+                                                <div class="set-right">
+                                                    <i class="fas fa-chevron-right"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="set-tab-content" tab-name="aparencia">
+                                        <div class="delpack-space def-popup-space hidden">
+                                            <div class="delpack def-popup">
+                                                <div class="delpack-content">
+                                                    <div class="def-popup-header">
+                                                        <div class="def-popup-icon">
+                                                            <i class="fas fa-trash"></i>
+                                                        </div>
+                                                        <div class="def-popup-text">
+                                                            <div class="def-popup-title">
+                                                                <span en="Delete pack?">Excluir pacote?</span>
+                                                            </div>
+                                                            <div class="def-popup-desc">
+                                                                <span
+                                                                    en="By deleting this package, you will lose all images and other information contained in it">Ao
+                                                                    excluir este pacote, você perderá todas as imagens e
+                                                                    outras informações contidas nele.</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="def-popup-ask def-popup-options">
+                                                        <span en="Do you want to continue?">Deseja continuar?</span>
+                                                    </div>
+                                                    <div>
+                                                        <button class="delpack-confirm def-warn-button def-ripple">
+                                                            <i class="fas fa-trash"></i>
+                                                            <span en="Delete">Excluir</span>
+                                                        </button>
+                                                        <button class="delpack-cancel def-nwarn-button def-ripple"
+                                                            onclick="tabfunApp.wall.delPack.close()">
+                                                            <span en="Cancel">Cancelar</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="addpack-space def-popup-space def-popup-high hidden">
+                                            <div class="addpack def-popup">
+                                                <div class="addpack-content">
+                                                    <div class="addpack-header def-popup-header centralize-header">
+                                                        <div class="def-popup-icon">
+                                                            <i class="fas fa-image"></i>
+                                                        </div>
+                                                        <div class="def-popup-title def-popup-text">
+                                                            <span en="New image">Nova imagem</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="addpack-body def-popup-body">
+                                                        <div class="addpack-body-content">
+                                                            <div class="def-popup-ask">
+                                                                <span en="Enter a image URL...">Insira a URL de uma
+                                                                    imagem...</span>
+                                                            </div>
+                                                            <div class="addpack-image-space">
+                                                                <input type="text" class="addpack-image def-input"
+                                                                    placeholder="URL da imagem" en="Image URL"
+                                                                    en-attr="placeholder">
+                                                            </div>
+                                                            <div class="addpack-split"></div>
+                                                            <div class="def-popup-ask">
+                                                                <span en="...or select an image from gallery">...ou
+                                                                    selecione uma imagem da galeria</span>
+                                                            </div>
+                                                            <div class="addpack-gallery">
+                                                                <div class="addpack-item">
+                                                                    <img src="../../common/files/default-avatar.png"
+                                                                        alt="Imagem não encontrada" en="Image not found"
+                                                                        en-attr="alt">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="addpack-bottom def-popup-options">
+                                                        <button
+                                                            class="addpack-confirm def-highlighted-button def-ripple"
+                                                            onclick="tabfunApp.wall.pack.confirmNewItem()">
+                                                            <i class="fas fa-upload"></i>
+                                                            <span en="Add">Adicionar</span>
+                                                        </button>
+                                                        <button
+                                                            class="addpack-cancel def-non-highlighted-button def-ripple"
+                                                            onclick="tabfunApp.wall.pack.closeNewItem()">
+                                                            <span en="Cancel">Cancelar</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="wallpack-space def-popup-space hidden">
+                                            <div class="wallpack def-popup">
+                                                <div class="wallpack-content">
+                                                    <div class="wallpack-header def-popup-header centralize-header">
+                                                        <div class="wallpack-icon def-popup-icon">
+                                                            <i class="fas fa-palette"></i>
+                                                        </div>
+                                                        <div class="wallpack-title def-popup-title def-popup-text">
+                                                            <span en="My package">Meu pacote</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="wallpack-body def-popup-body">
+                                                        <div class="wallpack-body-content">
+                                                            <div class="wallpack-infos">
+                                                                <span class="def-hint" en="Package name">Nome do
+                                                                    pacote</span>
+                                                                <div class="wallpack-name-space">
+                                                                    <input type="text"
+                                                                        class="wallpack-name-input def-input"
+                                                                        placeholder="Nome do pacote" en="Package name"
+                                                                        en-attr="placeholder">
+                                                                </div>
+                                                            </div>
+                                                            <div class="wallpack-images">
+                                                                <span class="def-hint">
+                                                                    <span en="Images">Imagens</span>
+                                                                    <span class="wallpack-image-count">0</span>
+                                                                </span>
+                                                                <div class="wallpack-add-space">
+                                                                    <button
+                                                                        class="wallpack-add-image def-great-button def-ripple"
+                                                                        onclick="tabfunApp.wall.pack.newItem()">
+                                                                        <i class="fas fa-plus"></i>
+                                                                        <span en="New image">Nova imagem</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="wallpack-list">
+
+                                                                    <div class="walli-box">
+                                                                        <div class="walli-box-content">
+                                                                            <div class="walli-img-space">
+                                                                                <img src="../../common/files/default-banner.png"
+                                                                                    alt="Imagem não encontrada"
+                                                                                    en="Image not found" en-attr="alt">
+                                                                            </div>
+                                                                            <div class="walli-info-space def-ellipsis">
+                                                                                <div class="walli-title-space def-ellipsis"
+                                                                                    title="https://url.da.imagem">
+                                                                                    <span>https://url.da.imagem</span>
+                                                                                </div>
+                                                                                <div class="walli-option-space">
+                                                                                    <button
+                                                                                        class="walli-remove def-nwarn-button def-ripple">
+                                                                                        <i class="fas fa-times"></i>
+                                                                                        <span en="Remove">Remover</span>
+                                                                                    </button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="wallpack-aditional">
+                                                                <div class="wallpack-aditional-content">
+                                                                    <span class="def-hint" en="Aditional options">Opções
+                                                                        adicionais</span>
+                                                                    <div class="wallpack-aditional-topic">
+                                                                        <div class="wallpack-aditional-time">
+                                                                            <div class="wallpack-aditional-hint">
+                                                                                <span en="Image switch interval">Tempo
+                                                                                    de troca de imagens</span>
+                                                                            </div>
+                                                                            <div
+                                                                                class="wallpack-aditional-time-input-space">
+                                                                                <input type="number"
+                                                                                    class="wallpack-aditional-time-input def-input"
+                                                                                    placeholder="Tempo" en="Time"
+                                                                                    en-attr="placeholder" value="15">
+                                                                                <span en="seconds">segundos</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="wallpack-aditional-transition">
+                                                                            <div class="wallpack-aditional-hint">
+                                                                                <span
+                                                                                    en="Transition between image switch">Transição
+                                                                                    entre troca de imagens</span>
+                                                                            </div>
+                                                                            <div
+                                                                                class="wallpack-aditional-transition-select-space">
+                                                                                <div class="wallpack-aditional-transition-selector def-select-trigger set-select-button def-ripple"
+                                                                                    target="div.wallpack-aditional-transition-select">
+                                                                                    <span en="Fade">Desaparecer</span>
+                                                                                    <i class="fas fa-chevron-down"></i>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="wallpack-aditional-transition-select def-select">
+                                                                                    <div class="def-select-title">
+                                                                                        <span
+                                                                                            en="Choose the transition type">Escolha
+                                                                                            o tipo de transição</span>
+                                                                                    </div>
+                                                                                    <div class="def-select-option"
+                                                                                        optionvalue="slide"
+                                                                                        optionname="Deslizar" en="Slide"
+                                                                                        en-attr="optionname"
+                                                                                        onclick="tabfunApp.wall.pack.edit.setTransition(this)">
+                                                                                        <div>
+                                                                                            <span
+                                                                                                en="Slide">Deslizar</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="def-select-option selected"
+                                                                                        optionvalue="fade"
+                                                                                        optionname="Desaparecer"
+                                                                                        en="Fade" en-attr="optionname"
+                                                                                        onclick="tabfunApp.wall.pack.edit.setTransition(this)">
+                                                                                        <div>
+                                                                                            <span
+                                                                                                en="Fade">Desaparecer</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="def-select-option"
+                                                                                        optionvalue="zoom"
+                                                                                        optionname="Aumentar"
+                                                                                        en="Expand" en-attr="optionname"
+                                                                                        onclick="tabfunApp.wall.pack.edit.setTransition(this)">
+                                                                                        <div>
+                                                                                            <span en="Expand">Aumentar</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="def-select-option"
+                                                                                        optionvalue="insta"
+                                                                                        optionname="Instantâneo"
+                                                                                        en="Immediate"
+                                                                                        en-attr="optionname"
+                                                                                        onclick="tabfunApp.wall.pack.edit.setTransition(this)">
+                                                                                        <div>
+                                                                                            <span
+                                                                                                en="Immediate">Instantâneo</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="wallpack-aditional-opacity">
+                                                                            <div class="wallpack-aditional-hint">
+                                                                                <span en="Wallpaper birghtness">Brilho
+                                                                                    do papel de parede</span>
+                                                                            </div>
+                                                                            <div
+                                                                                class="wallpack-aditional-opacity-around">
+                                                                                <div
+                                                                                    class="wallpaper-opacity-slider-space">
+                                                                                    <input type="range"
+                                                                                        class="wallpaper-opacity-slider"
+                                                                                        oninput="tabfunApp.wall.pack.edit.showOpacity(this.value)"
+                                                                                        onchange="tabfunApp.wall.pack.edit.setOpacity(this.valueAsNumber)"
+                                                                                        value="100">
+                                                                                </div>
+                                                                                <span
+                                                                                    class="wallpaper-opacity-counter">100</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="wallpack-bottom def-popup-bottom">
+                                                        <button
+                                                            class="wallpack-confirm def-highlighted-button def-ripple"
+                                                            onclick="tabfunApp.wall.pack.edit.confirm()">
+                                                            <span en="Confirm">Confirmar</span>
+                                                        </button>
+                                                        <button
+                                                            class="wallpack-cancel def-non-highlighted-button def-ripple"
+                                                            onclick="tabfunApp.wall.pack.edit.closePopup()">
+                                                            <span en="Cancelar">Cancelar</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="set-wall-space def-popup-space hidden">
+                                            <div class="set-wall def-popup">
+                                                <div class="set-wall-content">
+                                                    <div class="def-popup-header centralize-header">
+                                                        <div class="def-popup-icon">
+                                                            <i class="far fa-image"></i>
+                                                        </div>
+                                                        <div class="def-popup-title def-popup-text">
+                                                            <span en="Set wallpaper">Definir papel de parede</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="def-popup-body">
+                                                        <div class="def-popup-ask">
+                                                            <span en="Enter an image URL...">Insira o URL de uma
+                                                                imagem...</span>
+                                                        </div>
+                                                        <div class="set-wall-input-space">
+                                                            <input type="text" class="set-wall-input def-biginput"
+                                                                placeholder="URL da imagem" en="Image URL"
+                                                                en-attr="placeholder">
+                                                        </div>
+                                                        <div class="set-wall-bottom-text-hint def-popup-ask">
+                                                            <span en="... or select an image from gallery">...ou
+                                                                selecione uma imagem da galeria</span>
+                                                        </div>
+                                                        <div class="set-wall-gallery">
+                                                            <div class="set-wall-gallery-noitems">
+                                                                <span en="No images :(">Sem imagens na galeria :(</span>
+                                                            </div>
+                                                            <div class="set-wall-gallery-item def-ripple">
+                                                                <img src="../../common/files/default-banner.png"
+                                                                    alt="Imagem não encontrada." en="Image not found."
+                                                                    en-attr="alt">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="def-popup-options">
+                                                        <button class="def-highlighted-button def-ripple"
+                                                            onclick="tabfunApp.wall.confirm()">
+                                                            <span en="Confirm">Confirmar</span>
+                                                        </button>
+                                                        <button class="def-non-highlighted-button def-ripple"
+                                                            onclick="tabfunApp.wall.closePopup()">
+                                                            <span en="Cancel">Cancelar</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="app-deltheme-space def-popup-space hidden">
+                                            <div class="app-deltheme def-popup">
+                                                <div class="app-deltheme-content">
+                                                    <div class="app-deltheme-header def-popup-header">
+                                                        <div class="def-popup-icon">
+                                                            <i class="far fa-moon"></i>
+                                                        </div>
+                                                        <div class="def-popup-text">
+                                                            <div class="def-popup-title">
+                                                                <span en="Delete theme?">Excluir tema?</span>
+                                                            </div>
+                                                            <div class="def-popup-desc">
+                                                                <span
+                                                                    en="By deleting this theme, you will not be able to use it on Face in the Book pages.">Ao
+                                                                    excluir este tema, você não poderá mais utilizá-lo
+                                                                    nas páginas do Face in the Book.</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="def-popup-ask def-popup-body">
+                                                        <span en="Do you want to continue?">Deseja continuar?</span>
+                                                    </div>
+                                                    <div class="app-deltheme-bottom def-popup-options">
+                                                        <button class="app-deltheme-confirm def-warn-button def-ripple">
+                                                            <span en="Delete">Excluir</span>
+                                                        </button>
+                                                        <button class="app-deltheme-cancel def-nwarn-button def-ripple"
+                                                            onclick="tabfunApp.themeDelCancel()">
+                                                            <span en="Cancel">Cancelar</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="app-newtheme-space def-popup-space hidden">
+                                            <div class="app-newtheme def-popup">
+                                                <div class="app-newtheme-content">
+                                                    <div class="app-newtheme-header def-popup-header centralize-header">
+                                                        <div class="app-newtheme-icon def-popup-icon">
+                                                            <i class="fas fa-paint-brush"></i>
+                                                        </div>
+                                                        <div class="app-newtheme-title def-popup-title def-popup-text">
+                                                            <span en="My theme">Meu tema</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="app-newtheme-body def-popup-body">
+                                                        <div class="app-newtheme-body-top">
+                                                            <span class="def-hint" en="Theme name">Nome do tema</span>
+                                                            <div class="app-newtheme-name-input-space">
+                                                                <input type="text"
+                                                                    class="app-newtheme-name-input def-input"
+                                                                    placeholder="Nome do tema" en="Theme name"
+                                                                    en-attr="placeholder">
+                                                            </div>
+                                                            <span class="app-newtheme-description-up def-hint"
+                                                                en="Description">Descrição</span>
+                                                            <div class="app-newtheme-desc-space">
+                                                                <textarea cols="30" rows="10" class="app-newtheme-desc"
+                                                                    placeholder="Descrição do tema"
+                                                                    en="Theme description"
+                                                                    en-attr="placeholder"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="app-newtheme-body-middle">
+                                                            <div class="app-newtheme-body-middle-content">
+                                                                <span class="app-newtheme-prop-up def-hint">
+                                                                    <span class="app-theme-prop-before"
+                                                                        en="Properties">Propiedades</span>
+                                                                    <span class="app-theme-prop-count">0</span>
+                                                                </span>
+                                                                <div class="app-newtheme-newtheme-space">
+                                                                    <button
+                                                                        class="app-newtheme-newtheme def-great-button def-ripple def-select-trigger"
+                                                                        target="div.app-newprop"
+                                                                        onclick="tabfunApp.loadProperties()">
+                                                                        <i class="fas fa-plus"></i>
+                                                                        <span en="New property">Nova propriedade</span>
+                                                                    </button>
+                                                                    <button
+                                                                        class="app-newtheme-newtheme-options def-great-button def-ripple def-select-trigger"
+                                                                        target="div.app-newtheme-select">
+                                                                        <i class="fas fa-chevron-down"></i>
+                                                                    </button>
+                                                                    <div class="app-newtheme-select def-select">
+                                                                        <div class="def-select-title">
+                                                                            <span en="Property options">Opções de
+                                                                                propriedades</span>
+                                                                        </div>
+                                                                        <div class="app-newtheme-select-option def-select-option"
+                                                                            onclick="tabfunApp.selectAll()">
+                                                                            <div
+                                                                                class="app-newtheme-select-option-content">
+                                                                                <i class="fas fa-paint-brush"></i>
+                                                                                <span
+                                                                                    en="Add all the existing properties">Adicionar
+                                                                                    todas as propriedades
+                                                                                    existentes</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="app-newtheme-select-option def-select-option"
+                                                                            onclick="tabfunApp.removeAllDefaults()">
+                                                                            <div
+                                                                                class="app-newtheme-select-option-content">
+                                                                                <i class="fas fa-times"></i>
+                                                                                <span
+                                                                                    en="Remove all the unchanged properties">Remover
+                                                                                    todas as propriedades
+                                                                                    inalteradas</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="app-newtheme-select-option def-select-option"
+                                                                            onclick="tabfunApp.resetAll()">
+                                                                            <div
+                                                                                class="app-newtgeme-select-option-content">
+                                                                                <i class="fas fa-redo"></i>
+                                                                                <span
+                                                                                    en="Reset the properties for its default value">Redefinir
+                                                                                    as propriedades para seu valor
+                                                                                    padrão</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="app-newprop def-select">
+                                                                        <div class="def-select-title">
+                                                                            <span en="New property">Nova
+                                                                                propriedade</span>
+                                                                        </div>
+                                                                        <div class="app-newprop-list">
+                                                                            <div class="app-newprop-option def-select-option"
+                                                                                onclick="tabfunApp.newProperty('')">
+                                                                                <div class="app-newprop-option-content">
+                                                                                    <span en="ipsum">Lorem</span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="app-newtheme-property-list">
+
+                                                                    <div class="app-newtheme-box">
+                                                                        <div class="app-newtheme-box-content">
+                                                                            <div class="app-newtheme-box-top">
+                                                                                <span>Nome do coiso</span>
+                                                                            </div>
+                                                                            <div class="app-newtheme-box-bottom">
+                                                                                <label for="appnewthemeselector"
+                                                                                    class="app-newtheme-color">
+                                                                                    <input type="color"
+                                                                                        id="appnewthemeselector"
+                                                                                        class="hidden">
+                                                                                    <span en="Color:">Cor:</span>
+                                                                                    <span
+                                                                                        class="app-newtheme-box-color">#1e90ff</span>
+                                                                                </label>
+                                                                                <button
+                                                                                    class="app-newtheme-remove def-nwarn-button def-ripple">
+                                                                                    <i class="fas fa-times"></i>
+                                                                                    <span en="Remove">Remover</span>
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="app-newtheme-bottom def-popup-options">
+                                                        <button
+                                                            class="app-newtheme-confirm def-highlighted-button def-ripple"
+                                                            en="Confirm"
+                                                            onclick="tabfunApp.newTheme()">Confirmar</button>
+                                                        <button
+                                                            class="app-newtheme-cancel def-non-highlighted-button def-ripple"
+                                                            en="Cancel"
+                                                            onclick="tabfunApp.closeThemePopup()">Cancelar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="set-tab-content-content">
+                                            <div class="app-topic">
+                                                <div class="app-topic-title set-topic-title">
+                                                    <span en="Customize">Personalizar</span>
+                                                </div>
+                                                <div class="app-topic-body set-topic-body">
+                                                    <div class="app-topic-body-content">
+                                                        <div class="app-subtopic set-subtopic">
+                                                            <div class="app-subtopic-content">
+                                                                <div class="app-subtopic-header">
+                                                                    <div class="app-subtopic-header-content">
+                                                                        <div
+                                                                            class="app-subtopic-header-title set-topic-subtitle">
+                                                                            <span en="Set wallpaper">Definir papel de
+                                                                                parede</span>
+                                                                        </div>
+                                                                        <div class="app-subtopic-header-check-space">
+                                                                            <i class="fas fa-check-square app-subtopic-header-check app-checked app-wall-box-select"
+                                                                                onclick="tabfunApp.wall.select('', this)"
+                                                                                codigo=""></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="app-subtopic-body">
+                                                                    <div class="app-subtopic-body-content">
+                                                                        <div class="app-setwall-space">
+                                                                            <div class="app-setwall-left">
+                                                                                <img src="../../common/files/default-banner.png"
+                                                                                    alt="Imagem não encontrada."
+                                                                                    en="Image not found." en-attr="alt">
+                                                                            </div>
+                                                                            <div class="app-setwall-right">
+                                                                                <div class="app-setwall-title">
+                                                                                    <span
+                                                                                        en="Choose an wallpaper">Definir
+                                                                                        plano de fundo</span>
+                                                                                </div>
+                                                                                <div class="app-setwall-options">
+                                                                                    <button
+                                                                                        class="app-setwall-change def-highlighted-button def-ripple"
+                                                                                        en="Change"
+                                                                                        onclick="tabfunApp.wall.openPopup()">Alterar</button>
+                                                                                    <button
+                                                                                        class="app-setwall-remove def-nwarn-button def-ripple"
+                                                                                        onclick="tabfunApp.wall.clear()">
+                                                                                        <i class="fas fa-trash"></i>
+                                                                                        <span en="Remove">Remover</span>
+                                                                                    </button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="app-subtopic set-subtopic app-topic-package">
+                                                            <div class="app-subtopic-content">
+                                                                <div class="app-subtopic-header">
+                                                                    <div class="app-subtopic-header-content">
+                                                                        <div
+                                                                            class="app-subtopic-header-title set-topic-subtitle">
+                                                                            <span en="Wallpaper packages">Pacotes de
+                                                                                papel de parede</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="app-subtopic-body">
+                                                                    <div class="app-subtopic-body-content">
+                                                                        <div class="app-walls-header">
+                                                                            <div class="app-walls-header-content">
+                                                                                <div class="app-walls-header-left">
+                                                                                    <button
+                                                                                        class="app-walls-add def-great-button def-ripple"
+                                                                                        onclick="tabfunApp.wall.pack.edit.openPopup()">
+                                                                                        <i class="fas fa-plus"></i>
+                                                                                        <span en="New package">Novo
+                                                                                            pacote</span>
+                                                                                    </button>
+                                                                                </div>
+                                                                                <div class="app-walls-header-right">
+                                                                                    <button
+                                                                                        class="app-walls-remove def-nwarn-button def-ripple">
+                                                                                        <i class="fas fa-times"></i>
+                                                                                        <span
+                                                                                            en="Remove packages">Excluir
+                                                                                            pacotes</span>
+                                                                                    </button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="app-walls-body">
+                                                                            <div class="app-walls-body-content">
+                                                                                <div class="app-walls-list">
+
+                                                                                    <div class="app-wall-box">
+                                                                                        <div
+                                                                                            class="app-wall-box-content">
+                                                                                            <div
+                                                                                                class="app-wall-box-top">
+                                                                                                <div
+                                                                                                    class="app-wall-box-left">
+                                                                                                    <div
+                                                                                                        class="app-wall-box-infos">
+                                                                                                        <div
+                                                                                                            class="app-wall-box-infos-image-space">
+                                                                                                            <img src="../../common/files/default-banner.png"
+                                                                                                                alt="Imagem não encontrada"
+                                                                                                                en="Image not found"
+                                                                                                                en-attr="alt"
+                                                                                                                class="app-wall-thumb app-wall-box-image-1">
+                                                                                                            <img src="../../common/files/warn-background.png"
+                                                                                                                alt="Imagem não encontrada"
+                                                                                                                en="Image not found"
+                                                                                                                en-attr="alt"
+                                                                                                                class="app-wall-thumb app-wall-box-image-2">
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                            class="app-wall-box-infos-info-space">
+                                                                                                            <div
+                                                                                                                class="app-wall-box-name">
+                                                                                                                <span>Título
+                                                                                                                    do
+                                                                                                                    pacote</span>
+                                                                                                            </div>
+                                                                                                            <div
+                                                                                                                class="app-wall-box-count-space">
+                                                                                                                <span
+                                                                                                                    class="app-wall-box-count-around">
+                                                                                                                    <span
+                                                                                                                        class="app-wall-box-count">0</span>
+                                                                                                                    <span
+                                                                                                                        class="app-wall-box-count-after">imagens</span>
+                                                                                                                </span>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="app-wall-box-right">
+                                                                                                    <i
+                                                                                                        class="fas fa-trash app-wall-box-remove def-ripple warn-color"></i>
+                                                                                                    <i class="far fa-check-square app-wall-box-select"
+                                                                                                        onclick="tabfunApp.wall.select('codigo', this)"
+                                                                                                        codigo="codigo"></i>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div
+                                                                                                class="app-wall-box-bottom">
+                                                                                                <span
+                                                                                                    class="app-wall-box-created-around">
+                                                                                                    <span
+                                                                                                        class="app-wall-box-created-before"
+                                                                                                        en="Created at">Criado
+                                                                                                        em</span>
+                                                                                                    <span
+                                                                                                        class="app-wall-box-created">20/05/2005</span>
+                                                                                                </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="app-subtopic set-subtopic app-topic-themes">
+                                                            <div class="app-subtopic-content">
+                                                                <div class="app-subtopic-header">
+                                                                    <div class="app-subtopic-header-content">
+                                                                        <div class="app-subtitle set-topic-subtitle">
+                                                                            <span en="Themes">Temas</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="app-subtopic-body">
+                                                                    <div class="app-subtopic-body-content">
+                                                                        <div class="app-theme-bin">
+                                                                            <div class="app-theme-bin-content">
+                                                                                <div class="app-theme-bin-header">
+                                                                                    <div
+                                                                                        class="app-theme-bin-title def-hint">
+                                                                                        <span
+                                                                                            en="Presets">Pré-definidos</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="app-theme-bin-body">
+                                                                                    <div
+                                                                                        class="app-theme-bin-body-content">
+
+                                                                                        <div class="app-theme-box">
+                                                                                            <div
+                                                                                                class="app-theme-box-content">
+                                                                                                <div
+                                                                                                    class="app-theme-box-left">
+                                                                                                    <div
+                                                                                                        class="app-theme-box-infos">
+                                                                                                        <div
+                                                                                                            class="app-theme-box-icon-space">
+                                                                                                            <i
+                                                                                                                class="fas fa-moon"></i>
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                            class="app-theme-box-info-space">
+                                                                                                            <span
+                                                                                                                class="apptheme-box-name"
+                                                                                                                en="Dark mode">Tema
+                                                                                                                escuro</span>
+                                                                                                            <span
+                                                                                                                class="app-theme-box-desc"
+                                                                                                                en="Your eyes thank">Os
+                                                                                                                olhos
+                                                                                                                agradecem</span>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="app-theme-box-right">
+                                                                                                    <i class="far fa-check-square app-theme-box-select"
+                                                                                                        onclick="tabfunApp.selectTheme('dark')"
+                                                                                                        theme="dark"></i>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="app-theme-box">
+                                                                                            <div
+                                                                                                class="app-theme-box-content">
+                                                                                                <div
+                                                                                                    class="app-theme-box-left">
+                                                                                                    <div
+                                                                                                        class="app-theme-box-infos">
+                                                                                                        <div
+                                                                                                            class="app-theme-box-icon-space">
+                                                                                                            <i
+                                                                                                                class="fas fa-sun"></i>
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                            class="app-theme-box-info-space">
+                                                                                                            <span
+                                                                                                                class="apptheme-box-name"
+                                                                                                                en="Light mode">Tema
+                                                                                                                claro</span>
+                                                                                                            <span
+                                                                                                                class="app-theme-box-desc"
+                                                                                                                en="Made to blind you">Feito
+                                                                                                                para te
+                                                                                                                cegar!</span>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="app-theme-box-right">
+                                                                                                    <i class="far fa-check-square app-theme-box-select"
+                                                                                                        onclick="tabfunApp.selectTheme('light')"
+                                                                                                        theme="light"></i>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="app-theme-bin app-bin-my-themes">
+                                                                            <div class="app-theme-bin-content">
+                                                                                <div class="app-theme-bin-header">
+                                                                                    <div
+                                                                                        class="app-theme-bin-title def-hint">
+                                                                                        <span en="My themes">Meus
+                                                                                            temas</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="app-my-theme-new-space">
+                                                                                    <button
+                                                                                        class="app-mytheme-new def-great-button def-ripple"
+                                                                                        onclick="tabfunApp.openThemePopup()">
+                                                                                        <i class="fas fa-plus"></i>
+                                                                                        <span en="New theme">Novo
+                                                                                            tema</span>
+                                                                                    </button>
+                                                                                </div>
+                                                                                <div class="app-theme-bin-body">
+                                                                                    <div
+                                                                                        class="app-theme-bin-body-content">
+                                                                                        <div class="app-mytheme-list">
+
+                                                                                            <div class="app-theme-box">
+                                                                                                <div
+                                                                                                    class="app-theme-box-content">
+                                                                                                    <div
+                                                                                                        class="app-theme-box-left">
+                                                                                                        <div
+                                                                                                            class="app-theme-box-infos">
+                                                                                                            <div
+                                                                                                                class="app-theme-box-icon-space">
+                                                                                                                <i
+                                                                                                                    class="fas fa-paint-brush"></i>
+                                                                                                            </div>
+                                                                                                            <div
+                                                                                                                class="app-theme-box-info-space">
+                                                                                                                <span
+                                                                                                                    class="apptheme-box-name">Título
+                                                                                                                    do
+                                                                                                                    tema</span>
+                                                                                                                <span
+                                                                                                                    class="app-theme-box-desc">Descrição
+                                                                                                                    do
+                                                                                                                    tema</span>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div
+                                                                                                        class="app-theme-box-right">
+                                                                                                        <i
+                                                                                                            class="far fa-check-square app-theme-box-select"></i>
+                                                                                                        <i
+                                                                                                            class="fas fa-trash app-theme-box-delete warn-color"></i>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="set-tab-content" tab-name="restricao">
+                                        Restrição
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sound-effects"></div>
+
+    <script src="../../common/scripts/message.js"></script>
+    <script src="../../common/scripts/database.js"></script>
+    <script src="../../common/scripts/get-time.js"></script>
+    <script src="../../common/scripts/face-backend.js"></script>
+    <script src="../scripts/settings-backend.js"></script>
+    <script src="../../common/scripts/warn.js"></script>
+    <script src="../../common/scripts/params.js"></script>
+    <script src="../../common/scripts/lang.js"></script>
+
+    <script src="../../common/scripts/def.js"></script>
+    <script src="../../common/scripts/theme.js"></script>
+    <script src="../scripts/settings.js"></script>
+    <script src="../../common/scripts/achievement.js"></script>
+
+    <script src="../../common/scripts/conquistas.js"></script>
+    <script src="../../common/scripts/audio.js"></script>
+    <script src="../../common/scripts/redirect.js"></script>
+    <script src="../../common/scripts/code-generator.js"></script>
+    <script src="../../common/scripts/audio.js"></script>
+
+    <!-- Ícones alternativos -->
+    <div class="alt-icons" style="display: none !important;"></div>
+
+    <!-- Ícones da página -->
+    <script src="https://kit.fontawesome.com/8e170bc822.js" class="font-awesome-script" crossorigin="anonymous"
+        onerror="setTimeout(() => {activeAltIcons(true, this)}, 3000)"></script>
+</body>
+
+</html>

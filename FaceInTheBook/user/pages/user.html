@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de usuário - Face in the Book</title>
+
+    <!-- Ícone da página -->
+    <link rel="icon" href="../../common/files/logo.png">
+
+    <!-- Fontes da página -->
+    <div class="page-fonts"></div>
+
+    <!-- Estilo da página -->
+    <link rel="stylesheet" href="../../common/styles/def.css">
+    <link rel="stylesheet" href="../../common/styles/root.css">
+    <link rel="stylesheet" href="../../common/styles/warn.css">
+    <link rel="stylesheet" href="../styles/user.css">
+    <link rel="stylesheet" href="../../common/styles/header.css">
+    <link rel="stylesheet" href="../../common/styles/achievement.css">
+</head>
+
+<body>
+    <div class="usernotfound hidden">
+        <div class="usernotfound-content">
+            <div class="usernotfound-title-space">
+                <span class="usernotfound-title" en="User not found :(">Usuário não encontrado :(</span>
+            </div>
+            <div class="usernotfound-desc-space">
+                <span class="usernotfound-desc"
+                    en="Sorry, we couldn't find this user. Verify if the URL is correctly entered and try again.">Foi
+                    mal, não conseguimos encontrar este usuário. Verifique se a URL foi inserida corretamente e tente
+                    novamente.</span>
+            </div>
+            <div class="usernotfound-options-space">
+                <button class="usernotfound-home def-ripple">
+                    <i class="fas fa-home"></i>
+                    <span en="Go to the home page">Voltar à página inicial</span>
+                </button>
+                <button class="usernotfound-main def-ripple">
+                    <i class="fab fa-facebook"></i>
+                    <span en="Go to the main page">Voltar à página principal</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="menu-space hidden">
+            <div class="menu">
+                <div class="menu-content">
+                    <div class="menu-header">
+                        <div class="menu-header-content">
+                            <div class="menu-header-account-infos">
+                                <div class="menu-avatar-space">
+                                    <img src="../files/default-avatar.png" class="menu-avatar drag">
+                                </div>
+                                <div class="menu-infos-space">
+                                    <span class="menu-user-name def-user-name">Usuário</span>
+                                    <div class="menu-actions-space">
+                                        <span class="menu-change-user" en="Switch">Alternar</span>
+                                        <span class="menu-logout" en="Sign out" onclick="faceBackend.logout()">Sair</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-account-level-space">
+                                <div class="menu-account-level-text-space">
+                                    <div class="menu-level-level">
+                                        <span class="menu-level-around">
+                                            <span en="Level">Nível</span>
+                                            <span class="menu-level">0</span>
+                                        </span>
+                                        <span class="menu-level-xp-around">
+                                            <span class="menu-level-xp">0</span>
+                                            <span en="XP">EXP</span>
+                                        </span>
+                                    </div>
+                                    <div class="menu-level-goal-space">
+                                        <span class="menu-level-goal def-title" titulo="Meta" en-attr="titulo"
+                                            en="Goal">100</span>
+                                    </div>
+                                </div>
+                                <div class="menu-account-level-bar-space">
+                                    <div class="menu-level-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-body">
+                        <div class="menu-body-content">
+                            <div class="menu-settings-fast-access-space">
+                                <div class="menu-settings-fa def-ripple" tabindex="0" onclick="confRedirect()">
+                                    <div class="msettings-box">
+                                        <div class="msettings-box-content">
+                                            <div class="msettings-icon-space">
+                                                <i class="fas fa-cog msettings-icon"></i>
+                                            </div>
+                                            <div class="msettings-name-space">
+                                                <span class="msettings-name" en="Settings">Configurações</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-list-search-space">
+                                <div class="menu-list-search-content">
+                                    <input type="text" class="menu-list-search" placeholder="Pesquisar configurações"
+                                        en="Search settings" en-attr="title">
+                                    <button class="menu-list-search-send">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="menu-list">
+
+                                <div class="mbox" tabindex="0">
+                                    <div class="mbox-content">
+                                        <div class="mbox-left">
+                                            <div class="mbox-icon-space">
+                                                <i class="fas fa-globe mbox-icon"></i>
+                                            </div>
+                                            <div class="mbox-name-space">
+                                                <span class="mbox-name">Lorem ipsum dolor sit amet.</span>
+                                            </div>
+                                        </div>
+                                        <div class="mbox-right">
+                                            <div class="mbox-arrow-space">
+                                                <i class="fas fa-chevron-right mbox-arrow"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mbox" tabindex="0">
+                                    <div class="mbox-content">
+                                        <div class="mbox-left">
+                                            <div class="mbox-icon-space"></div>
+                                            <div class="mbox-name-space"></div>
+                                        </div>
+                                        <div class="mbox-right">
+                                            <div class="mbox-arrow-space"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-bottom">
+                        <div class="menu-bottom-content">
+                            <button class="send-feedback" en="Send feedback">Enviar feedback</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="notifications-space hidden">
+            <div class="notifications">
+                <div class="notifications-header">
+                    <div class="notifications-header-content">
+                        <div class="notification-title-space">
+                            <h2 class="notification-title" en="Notifications">Notificações</h2>
+                        </div>
+                        <div class="notification-filter-space">
+                            <div class="notification-filter-content">
+                                <select class="notification-filter">
+                                    <option value="new" en="🔥 Newest above">🔥 Recentes acima</option>
+                                    <option value="old" en="🕒 Oldest above">🕒 Antigos acima</option>
+                                </select>
+                                <button class="notification-options def-title" titulo="Configurações de notificação"
+                                    en="Notification settings" en-attr="titulo" onclick="notifications.settings.open()">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                            <div class="notification-settings-space def-select" tabindex="0">
+                                <div class="notification-settings">
+                                    <div class="notification-settings-header">
+                                        <div class="notification-settings-title-space def-select-title">
+                                            <span class="notification-settings-title"
+                                                en="Notification settings">Configurações de notificação</span>
+                                        </div>
+                                    </div>
+                                    <div class="notification-settings-options">
+
+                                        <div class="notsetbox def-select-option">
+                                            <div class="notsetbox-content">
+                                                <i class="fas fa-times def-select-option-icon"></i>
+                                                <span class="def-select-option-text" en="Clear">Limpar</span>
+                                            </div>
+                                        </div>
+                                        <div class="notsetbox def-select-option">
+                                            <div class="notsetbox-content">
+                                                <i class="fas fa-eye-slash def-select-option-icon"></i>
+                                                <span class="def-select-option-text" en="Hide">Esconder</span>
+                                            </div>
+                                        </div>
+                                        <div class="notsetbox def-select-option">
+                                            <div class="notsetbox-content">
+                                                <i class="fas fa-minus-circle def-select-option-icon"></i>
+                                                <span class="def-select-option-text" en="Silent">Silencioso</span>
+                                            </div>
+                                        </div>
+                                        <div class="notsetbox def-select-option">
+                                            <div class="notsetbox-content">
+                                                <i class="fas fa-ban def-select-option-icon"></i>
+                                                <span class="def-select-option-text" en="Block">Bloquear</span>
+                                            </div>
+                                        </div>
+                                        <div class="nosetbox def-select-option">
+                                            <div class="notsetbox-content">
+                                                <i class="fas fa-plus def-select-option-icon"></i>
+                                                <span class="def-select-option-text" en="More options">Mais
+                                                    opções</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="notification-split"></div>
+                <div class="notifications-body">
+                    <div class="notifications-body-content">
+                        <div class="notification-list">
+                            <span class="no-notifications" en="No notifications">Sem notificações</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-header-space" style="transform: translateY(0)">
+            <header class="page-header">
+                <div class="page-header-content">
+
+                    <div class="header-left-space">
+                        <div class="hl-content">
+                            <div class="hl-back-page def-ripple def-title" tabindex="0" titulo="Página principal"
+                                en="Main page" en-attr="titulo" onclick="voltar()">
+                                <i class="fas fa-arrow-left"></i>
+                            </div>
+                            <div class="hl-logo-space">
+                                <img src="../../common/files/logo.png" alt="Logo" class="hl-logo drag" tabindex="0"
+                                    c="0" onclick="seg.click(this)">
+                            </div>
+                            <div class="hl-search-space">
+                                <div class="hl-search-content">
+                                    <input type="text" class="fb-search" placeholder="Procurando algo?"
+                                        en-attr="placeholder" en="Looking for something?">
+                                    <button class="fb-search-send">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                                <div class="search-suggestions-space hidden" tabindex="0">
+                                    <div class="search-suggestions">
+
+                                        <div class="search-suggestion-topic-contents">
+                                            <div class="search-suggestion-topic">
+                                                <span class="search-suggestions-topic-name" en="From your history">Do
+                                                    seu histórico</span>
+                                            </div>
+                                            <div class="search-suggestions">
+
+                                                <div class="ss">
+                                                    <div class="ss-content">
+                                                        <span class="ss-text"
+                                                            en="Settings: Change username">Configurações: Alterar nome
+                                                            de usuário</span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-middle-space">
+                        <div class="hm-content">
+                            <h3 class="page-subtitle">
+                                <span en="Welcome,">Boas vindas</span>
+                                <span class="def-user-name">Usuário</span>
+                                <span>! :)</span>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="header-right-space">
+                        <div class="header-notification-space def-title def-ripple" titulo="Notificações"
+                            en-attr="titulo" en="Notifications" onclick="notifications.open()">
+                            <div class="header-notification-around">
+                                <i class="far fa-bell header-notification"></i>
+                            </div>
+                        </div>
+                        <div class="hr-content def-ripple" onclick="menu.open()">
+                            <div class="header-profile-space">
+                                <div class="profile-infos-space">
+                                    <div class="profile-infos">
+                                        <span class="profile-name def-user-name">Usuário</span>
+                                        <span class="profile-level-text">
+                                            <span en="Lvl ">Nvl </span>
+                                            <span class="profile-level">0</span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="profile-photo-space">
+                                    <img src="../files/default-avatar.png" class="profile-photo drag def-user-image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </header>
+        </div>
+
+        <!-- Popup's e elementos flutuantes -->
+        <!-- Conquistas -->
+        <div class="achievement hidden" text="Texto de fundo " en="Background text " en-attr="text" animation="0">
+            <div class="achievement-content">
+                <div class="achievement-face-space">
+                    <div class="achievement-face">
+                        <div class="achievement-face-icon-space">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="achievement-face-text-space">
+                            <div class="achievement-face-title-space">
+                                <span class="achievement-face-title" en="Congrats title!">Título de comemoração!</span>
+                            </div>
+                            <div class="achievement-face-exp-space">
+                                <span class="achievement-face-exp-around">
+                                    <span>+</span>
+                                    <span class="achievement-face-exp">20</span>
+                                    <span en="XP">EXP</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="achievement-get-space">
+                    <div class="achievement-get">
+                        <div class="achievement-icon-space">
+                            <img src="https://pbs.twimg.com/profile_images/1289324739794735104/mQoHcZfq.jpg"
+                                class="achievement-icon">
+                        </div>
+                        <div class="achievement-text-space">
+                            <div class="achievement-title-space">
+                                <span class="achievement-title" en="The achievement title will be here.">O título da
+                                    conquista ficará aqui.</span>
+                            </div>
+                            <div class="achievement-desc-space">
+                                <span class="achievement-desc" en="The achievement description will be here.">A
+                                    descrição da conquista ficará aqui.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Excluir postagem -->
+        <div class="delpost-space def-popup-space hidden">
+            <div class="delpost def-popup">
+                <div class="delpost-content">
+                    <div class="def-popup-header">
+                        <div class="def-popup-icon">
+                            <i class="fas fa-comment-slash"></i>
+                        </div>
+                        <div class="def-popup-text">
+                            <div class="def-popup-title">
+                                <span en="Delete post?">Excluir postagem?</span>
+                            </div>
+                            <div class="def-popup-desc">
+                                <span en="When you delete this post, you and other users won't be able to rate and see it."
+                                    >Ao excluir esta postagem, você e outros usuários não poderão mais avaliar e vê-la.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="def-popup-ask def-popup-options">
+                        <span en="Are you sure you want to continue?">Deseja continuar?</span>
+                    </div>
+                    <div>
+                        <button class="delpost-confirm def-warn-button def-ripple">
+                            <i class="fas fa-trash"></i>
+                            <span en="Delete">Excluir</span>
+                        </button>
+                        <button class="def-nwarn-button def-ripple" onclick="userPosts.delete.close()">
+                            <span en="Cancel">Cancelar</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enviar galeria -->
+        <div class="galsend-space def-popup-space hidden">
+            <div class="galsend def-popup">
+                <div class="galsend-content">
+                    <div class="def-popup-header centralize-header">
+                        <div class="def-popup-icon">
+                            <i class="fas fa-photo-video" style="font-size: 30px;"></i>
+                        </div>
+                        <div class="def-popup-title def-popup-text">
+                            <span en="Send gallery media">Enviar mídia da galeria</span>
+                        </div>
+                    </div>
+                    <div class="def-popup-body">
+                        <div class="galsend-list">
+                            <div class="galsend-item def-ripple">
+                                <img src="../../common/files/bolsonaro-triste.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="def-popup-options">
+                        <button class="def-non-highlighted-button def-ripple" onclick="newUsrPost.gallery.close()">
+                            <span en="Cancel">Cancelar</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enviar vídeo -->
+        <div class="post-video-space def-popup-space hidden">
+            <div class="post-video def-popup">
+                <div class="post-video-content">
+                    <div class="def-popup-header centralize-header">
+                        <div class="def-popup-icon">
+                            <i class="fas fa-video" style="font-size: 30px;"></i>
+                        </div>
+                        <div class="def-popup-title def-popup-text">
+                            <span en="Send video">Enviar vídeo</span>
+                        </div>
+                    </div>
+                    <div class="def-popup-body">
+                        <input type="text" class="post-video-input def-biginput" placeholder="URL do vídeo" en="Video URL" en-attr="placeholder">
+                    </div>
+                    <div class="def-popup-options">
+                        <button class="def-highlighted-button def-ripple" onclick="newUsrPost.video.confirm()">
+                            <i class="fas fa-upload"></i>
+                            <span en="Send">Enviar</span>
+                        </button>
+                        <button class="def-non-highlighted-button def-ripple" onclick="newUsrPost.video.close()">
+                            <span en="Cancel">Cancelar</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enviar imagem -->
+        <div class="post-image-space def-popup-space hidden">
+            <div class="post-image def-popup">
+                <div class="post-image-content">
+                    <div class="post-image-header def-popup-header">
+                        <div class="post-image-icon def-popup-icon">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <div class="post-image-title def-popup-title def-popup-text">
+                            <span en="Add image">Adicionar imagem</span>
+                        </div>
+                    </div>
+                    <div class="post-image-body def-popup-body">
+                        <div class="post-image-input-space">
+                            <input type="text" class="post-image-input def-biginput" placeholder="Insira a URL aqui" en="Enter the URL here" en-attr="placeholder" onblur="newUsrPost.image.loadPreview(this.value)">
+                        </div>
+                        <div class="post-image-prev-space hidden">
+                            <div class="post-image-prev-title">
+                                <span en="Preview">Pré-visualização</span>
+                            </div>
+                            <div class="post-image-prev-around">
+                                <img src="../files/default-banner.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-image-bottom def-popup-options">
+                        <button class="post-image-send def-highlighted-button def-ripple" onclick="newUsrPost.image.confirm()">
+                            <i class="fas fa-upload"></i>
+                            <span en="Send">Enviar</span>
+                        </button>
+                        <button class="post-image-cancel def-non-highlighted-button def-ripple" en="Cancel" onclick="newUsrPost.image.close()">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-content">
+            <div class="page-background">
+                <img
+                    src="https://cdn.discordapp.com/attachments/471800182053535745/771038879788302336/Banner_rede_social_RPB_Company.jpg">
+            </div>
+            <div class="page-content-content">
+                <div class="user-page">
+                    <div class="user-page-content">
+                        <div class="user-page-top">
+                            <div class="user-page-top-content">
+                                <div class="user-page-top-main">
+                                    <div class="user-page-since-space">
+                                        <span class="user-page-since-around">
+                                            <span en="Joined">Registrou-se em</span>
+                                            <span class="user-page-since-date">12/03/2021</span>
+                                        </span>
+                                    </div>
+                                    <div class="user-page-avatar-space">
+                                        <img src="../../common/files/default-avatar.png" class="user-page-avatar">
+                                    </div>
+                                    <div class="user-page-follow-space">
+                                        <button class="user-page-follow def-title def-ripple" titulo="Seguir usuário"
+                                            en="Follow user" en-attr="titulo">
+                                            <i class="far fa-heart"></i>
+                                            <span en="Follow">Seguir</span>
+                                        </button>
+                                        <button class="user-page-favorite def-title def-ripple"
+                                            titulo="Marcar usuário como favorito" en="Mark user as favorite"
+                                            en-attr="titulo">
+                                            <i class="far fa-star"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="user-page-name-space">
+                                    <span class="user-page-name">EUTENHO24CARACTERESMESMO</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-page-sup">
+                            <div class="user-page-options">
+                                <button class="user-page-block def-bigbutton def-ripple">
+                                    <i class="fas fa-ban"></i>
+                                    <span en="Block">Bloquear</span>
+                                </button>
+                                <button class="user-page-add def-bigbutton def-ripple">
+                                    <i class="fas fa-plus"></i>
+                                    <span en="Add as friend">Adicionar amigo</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="user-page-body">
+                            <div class="user-page-body-content">
+                                <div class="user-page-topic-list">
+                                    <div class="user-page-topic">
+                                        <div class="user-page-topic-content">
+                                            <div class="user-page-topic-title">
+                                                <span class="user-page-title">
+                                                    <span en="About">Sobre</span>
+                                                    <span class="usr-name">usuário</span>
+                                                </span>
+                                            </div>
+                                            <div class="user-page-topic-inside">
+                                                <div class="user-page-biography">
+                                                    <span class="user-page-bio"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="user-page-topic">
+                                        <div class="user-page-topic-content user-page-topic-achievement">
+                                            <div class="user-achievements-topic">
+                                                <div class="user-page-topic-title">
+                                                    <span class="user-page-title" en="Achievements">Conquistas</span>
+                                                </div>
+                                                <div class="user-page-topic-seeall">
+                                                    <button class="seeall-achievements def-ripple">
+                                                        <span en="See all">Ver tudo</span>
+                                                        <i class="fas fa-chevron-right"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="user-page-topic-subtitle def-hint">
+                                                <span class="user-page-subtitle"
+                                                    en="Last achievement got by this user">Última conquista obtida por
+                                                    este usuário</span>
+                                            </div>
+                                            <div class="user-page-topic-inside user-page-topic-last-achievement">
+                                                <!--
+                                                    <span class="user-page-no-achievements" en="This user has no achievements to show :("
+                                                    >Este usuário não tem conquistas para mostrar :(</span>
+                                                
+                                                    Quando não houver conquistas, adicionar isto ^
+                                                -->
+                                                <div class="user-page-achievement">
+                                                    <div class="user-achievement">
+                                                        <div class="user-achievement-content">
+                                                            <div class="user-achievement-left">
+                                                                <div class="user-achievement-icon-space">
+                                                                    <img src="../../common/files/achievements/arroba.png"
+                                                                        class="user-achievement-icon">
+                                                                </div>
+                                                            </div>
+                                                            <div class="user-achievement-right">
+                                                                <div class="user-achievement-title-space">
+                                                                    <span class="user-achievement-title">Marca ax
+                                                                        amigax</span>
+                                                                </div>
+                                                                <div class="user-achievement-desc-space">
+                                                                    <span class="user-achievement-desc">Mencionou alguém
+                                                                        em uma publicação.</span>
+                                                                </div>
+                                                                <div class="user-achievement-gettime-space">
+                                                                    <span en="Obtained on">Obtido em</span>
+                                                                    <span
+                                                                        class="user-achievement-gettime">18/03/2021</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="user-page-topic">
+                                        <div class="user-page-topic-content">
+                                            <div class="user-page-topic-title user-page-title">
+                                                <span en="Posts">Postagens</span>
+                                                <span class="user-page-post-count">0</span>
+                                            </div>
+                                            <div class="user-page-posts-space">
+                                                <div class="user-page-posts">
+                                                    <div class="user-page-newpost-space usr-owner">
+                                                        <span class="def-hint" en="Create new post">Criar nova
+                                                            postagem</span>
+                                                        <div class="user-page-newpost">
+                                                            <div class="user-page-newpost-left">
+                                                                <div class="user-page-newpost-left-content">
+                                                                    <img class="user-page-newpost-avatar usr-avatar">
+                                                                </div>
+                                                            </div>
+                                                            <div class="user-page-newpost-right">
+                                                                <div class="user-page-newpost-right-content">
+                                                                    <div class="user-page-np-top">
+                                                                        <div class="user-page-np-name-space">
+                                                                            <span
+                                                                                class="user-page-np-name usr-name def-ellipsis">Usuário</span>
+                                                                        </div>
+                                                                        <div
+                                                                            class="user-page-np-desc-space def-ellipsis">
+                                                                            <span class="user-page-np-desc"
+                                                                                en="This will be displayed in your profile">Isto
+                                                                                será exibido em seu perfil</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="user-page-np-form">
+                                                                        <div class="user-page-np-form-content">
+                                                                            <div class="user-page-np-form-top">
+                                                                                <div
+                                                                                    class="user-page-np-form-top-content">
+                                                                                    <div
+                                                                                        class="user-page-np-form-clear-space">
+                                                                                        <button
+                                                                                            class="user-page-np-form-clear def-ripple"
+                                                                                            onclick="newUsrPost.clearText()">
+                                                                                            <i class="fas fa-times"></i>
+                                                                                            <span
+                                                                                                en="Clear">Limpar</span>
+                                                                                        </button>
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="user-page-np-form-keycount-space">
+                                                                                        <span
+                                                                                            class="user-page-np-form-keycount-around">
+                                                                                            <span
+                                                                                                class="user-page-np-form-keycount">0</span><span>/1250</span>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="user-page-np-form-body">
+                                                                                <div
+                                                                                    class="user-page-np-form-body-content">
+                                                                                    <div
+                                                                                        class="user-page-npf-typing-space">
+                                                                                        <textarea id="" cols="30"
+                                                                                            rows="10"
+                                                                                            class="user-page-npf-typing"
+                                                                                            placeholder="No que você está pensando?"
+                                                                                            en="What's on your mind?"
+                                                                                            en-attr="placeholder"
+                                                                                            oninput="newUsrPost.count()"></textarea>
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="user-page-npf-media-space hidden">
+                                                                                        <div
+                                                                                            class="user-page-npf-media">
+                                                                                            <div
+                                                                                                class="user-page-npf-media-head def-ellipsis">
+                                                                                                <span
+                                                                                                    class="user-page-npf-media-url"
+                                                                                                    title="https://url.da.midia">https://url.da.midia</span>
+                                                                                            </div>
+                                                                                            <div
+                                                                                                class="user-page-npf-media-body">
+                                                                                                <img src="../../common/files/default-banner.png"
+                                                                                                    alt="Imagem não encontrada."
+                                                                                                    en="Image not found"
+                                                                                                    en-attr="alt"
+                                                                                                    class="user-page-npf-md">
+                                                                                                <video
+                                                                                                    class="user-page-npf-md"
+                                                                                                    controls>
+                                                                                                    <source
+                                                                                                        src="../../common/files/meudeus.mp4"
+                                                                                                        type="video/mp4">
+                                                                                                </video>
+                                                                                            </div>
+                                                                                            <div
+                                                                                                class="user-page-npf-media-bottom">
+                                                                                                <button
+                                                                                                    class="user-page-npf-media-clear def-ripple" onclick="newUsrPost.removeMedia()">
+                                                                                                    <i
+                                                                                                        class="fas fa-trash"></i>
+                                                                                                    <span
+                                                                                                        en="Remove media">Remover
+                                                                                                        mídia</span>
+                                                                                                </button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="user-page-np-form-bottom">
+                                                                                <div
+                                                                                    class="user-page-np-form-bottom-content">
+                                                                                    <div
+                                                                                        class="user-page-npf-send-space">
+                                                                                        <button
+                                                                                            class="user-page-npf-send def-ripple"
+                                                                                            onclick="sendPost()">
+                                                                                            <i
+                                                                                                class="fas fa-paper-plane"></i>
+                                                                                            <span
+                                                                                                en="Send">Enviar</span>
+                                                                                        </button>
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="user-page-npf-add-space">
+                                                                                        <div
+                                                                                            class="user-page-npf-add-top">
+                                                                                            <button
+                                                                                                class="user-page-npf-add-button def-ripple def-non-highlighted-button" onclick="newUsrPost.toggleTools(this)" view="hidden">
+                                                                                                <span
+                                                                                                    en="Add to the post...">Adicionar
+                                                                                                    à postagem...</span>
+                                                                                                <i
+                                                                                                    class="fas fa-chevron-down"></i>
+                                                                                            </button>
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="user-page-npf-add-body hidden">
+                                                                                            <div
+                                                                                                class="user-page-npf-add-name-space">
+                                                                                                <span
+                                                                                                    class="user-page-npf-add-name hidden-user-page-npf-add-name">Coloque
+                                                                                                    o mouse sobre uma
+                                                                                                    ferramenta para ver
+                                                                                                    o nome</span>
+                                                                                            </div>
+                                                                                            <div
+                                                                                                class="user-page-npf-add-tools-space">
+                                                                                                <div class="npfm-tool def-ripple"
+                                                                                                    tool-name="Adicionar imagem"
+                                                                                                    en="Add image"
+                                                                                                    en-attr="tool-name"
+                                                                                                    onmouseover="showToolName(this)" onclick="newUsrPost.image.open()">
+                                                                                                    <i
+                                                                                                        class="fas fa-image"></i>
+                                                                                                </div>
+                                                                                                <div class="npfm-tool def-ripple"
+                                                                                                    tool-name="Adicionar vídeo"
+                                                                                                    en="Add video"
+                                                                                                    en-attr="tool-name"
+                                                                                                    onmouseover="showToolName(this)" onclick="newUsrPost.video.open()">
+                                                                                                    <i
+                                                                                                        class="fas fa-video"></i>
+                                                                                                </div>
+                                                                                                <div class="npfm-tool def-ripple"
+                                                                                                    tool-name="Mídia da galeria"
+                                                                                                    en="Media from gallery"
+                                                                                                    en-attr="tool-name"
+                                                                                                    onmouseover="showToolName(this)" onclick="newUsrPost.gallery.open()">
+                                                                                                    <i
+                                                                                                        class="fas fa-photo-video"></i>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-page-postlist-space">
+                                                        <div class="user-page-postlist-top">
+                                                            <div class="uppl-post-options">
+                                                                <div class="uppl-post-search-space">
+                                                                    <input type="text"
+                                                                        class="uppl-post-search def-biginput"
+                                                                        placeholder="Pesquisar postagens deste usuário"
+                                                                        en="Search posts of this user"
+                                                                        en-attr="placeholder">
+                                                                    <button
+                                                                        class="uppl-post-search-send def-title def-ripple">
+                                                                        <i class="fas fa-search"></i>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="uppl-post-filter-space hidden">
+                                                                    <button class="uppl-post-filter def-ripple"
+                                                                        onclick="focusFilter()">
+                                                                        <i class="fas fa-align-right rotate180"></i>
+                                                                        <span en="Sort by">Ordenar por</span>
+                                                                        <i class="fas fa-chevron-down"></i>
+                                                                    </button>
+                                                                    <div class="uppl-post-filter-select def-select">
+                                                                        <div class="def-select-title">
+                                                                            <span en="Select a order">Selecione uma
+                                                                                ordem</span>
+                                                                        </div>
+                                                                        <div class="def-select-option selected">
+                                                                            <div class="uppl-pf-content">
+                                                                                <i class="fas fa-fire-alt"></i>
+                                                                                <span en="Newest above">Mais recentes
+                                                                                    acima</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="def-select-option">
+                                                                            <div class="uppl-pf-content">
+                                                                                <i class="far fa-clock"></i>
+                                                                                <span en="Oldest above">Mais antigas
+                                                                                    acima</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="def-select-option">
+                                                                            <div class="uppl-pf-content">
+                                                                                <i class="far fa-thumbs-up"></i>
+                                                                                <span en="Most liked above">Mais
+                                                                                    curtidas acima</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="user-page-postlist-body">
+                                                            <div class="user-page-postlist">
+
+                                                                <div class="uppost">
+                                                                    <div class="uppost-content">
+                                                                        <div class="uppost-header">
+                                                                            <div class="uppost-header-content">
+                                                                                <div class="uppost-header-infos">
+                                                                                    <div class="uppost-photo-space">
+                                                                                        <img src="../files/default-avatar.png"
+                                                                                            class="uppost-photo">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="uppost-post-infos-space">
+                                                                                        <div class="uppost-name-space">
+                                                                                            <span
+                                                                                                class="uppost-name">Usuário</span>
+                                                                                        </div>
+                                                                                        <div class="uppost-time-space">
+                                                                                            <span
+                                                                                                class="uppost-time-around def-title"
+                                                                                                titulo="19:08 22/03/2021">
+                                                                                                <span
+                                                                                                    class="uppost-date"
+                                                                                                    en="Today at">Hoje
+                                                                                                    às</span>
+                                                                                                <span
+                                                                                                    class="uppost-time">19:08</span>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="uppost-post-options">
+                                                                                    <i class="fas fa-trash uppost-delete def-title"
+                                                                                        titulo="Excluir postagem"
+                                                                                        en="Delete post"
+                                                                                        en-attr="titulo"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="uppost-body">
+                                                                            <div class="uppost-body-content">
+                                                                                <div class="uppost-text-space">
+                                                                                    <span>Boa noite.</span>
+                                                                                    <br>
+                                                                                    <span>Estão todos bem?</span>
+                                                                                </div>
+                                                                                <div class="uppost-media-space">
+                                                                                    <img src="../../common/files/bolsonaro-triste.jpg"
+                                                                                        class="uppost-media">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="uppost-bottom">
+                                                                            <div class="uppost-bottom-content">
+                                                                                <div class="uppost-rate">
+                                                                                    <i
+                                                                                        class="far fa-arrow-alt-circle-up"></i>
+                                                                                    <span
+                                                                                        class="uppost-rate-count">0</span>
+                                                                                    <i
+                                                                                        class="far fa-arrow-alt-circle-down"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Efeitos sonoros -->
+    <div class="sound-effects"></div>
+
+    <!-- Scripts da página -->
+    <script src="../../common/scripts/database.js"></script>
+    <script src="../../common/scripts/face-backend.js"></script>
+    <script src="../../common/scripts/get-time.js"></script>
+    <script src="../../common/scripts/warn.js"></script>
+    <script src="../../common/scripts/code-generator.js"></script>
+    <script src="../../common/scripts/params.js"></script>
+    <script src="../../common/scripts/lang.js"></script>
+
+    <script src="../../common/scripts/header.js"></script>
+    <script src="../scripts/load-user.js"></script>
+    <script src="../../common/scripts/achievement.js"></script>
+    <script src="../scripts/user-backend.js"></script>
+    <script src="../scripts/user.js"></script>
+    <script src="../../common/scripts/def.js"></script>
+
+    <script src="../../common/scripts/search.js"></script>
+    <script src="../../common/scripts/redirect.js"></script>
+    <script src="../../common/scripts/conquistas.js"></script>
+    <script src="../../common/scripts/audio.js"></script>
+    <script src="../../common/scripts/theme.js"></script>
+
+    <!-- Ícones alternativos -->
+    <div class="alt-icons" style="display: none !important;"></div>
+
+    <!-- Ícones da página -->
+    <script src="https://kit.fontawesome.com/8e170bc822.js" class="font-awesome-script" crossorigin="anonymous"
+        onerror="setTimeout(() => {activeAltIcons(true, this)}, 3000)"></script>
+</body>
+
+</html>

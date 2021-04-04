@@ -1,0 +1,782 @@
+/* 
+    Default properties
+
+    Utilizado para rapidamente colocar o CSS em algum elemento
+*/
+
+div.page-fonts {
+    display: none !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.invisible {
+    opacity: 0 !important;
+}
+
+.no-transition {
+    transition: none !important;
+}
+
+.no-scroll {
+    overflow: hidden !important;
+}
+
+.no-radius {
+    border-radius: 0 !important;
+}
+
+.non-focused {
+    filter: brightness(0.3) blur(35px);
+}
+
+.def-scroll::-webkit-scrollbar {
+    background: transparent;
+    width: 7px;
+}
+
+.def-scroll::-webkit-scrollbar-button {
+    background: var(--hov);
+}
+
+.def-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.def-ripple span.-def-ripple-effect- {
+    position: absolute;
+    background: white;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border-radius: 50%;
+    animation: .7s ripple-effect linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes ripple-effect {
+    from {
+        width: 0;
+        height: 0;
+        opacity: 0.7;
+    }
+
+    to {
+        width: 700px;
+        height: 700px;
+        opacity: 0;
+    }
+}
+
+.def-ripple * {
+    pointer-events: none;
+}
+
+.def-hint {
+    color: var(--cor);
+    font-size: 16px;
+    font-family: "Rajdhani", "Exo 2", Arial, Helvetica, sans-serif;
+    display: block;
+    padding-bottom: 5px;
+}
+
+.def-input {
+    background: var(--bc-s);
+    color: var(--cor);
+    border: 2px solid transparent;
+    padding: 5px;
+    border-radius: 4px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.def-input:focus {
+    border-color: var(--br);
+}
+
+.def-button {
+    background: var(--bc-s);
+    color: var(--cor);
+    border: 0;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.def-button:hover {
+    background: var(--hov);
+}
+
+.def-biginput {
+    background: var(--bc-s);
+    color: var(--cor);
+    border: 2.5px solid transparent;
+    padding: 10px;
+    border-radius: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.def-biginput:focus {
+    border-color: currentColor;
+}
+
+.def-smallinput {
+    padding: 5px;
+    color: var(--cor);
+    border-radius: 6px;
+    background: var(--bc-s);
+    border: 2px solid transparent;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.def-smallinput:focus {
+    border-color: var(--br);
+}
+
+.def-bigbutton {
+    background: var(--bc-s);
+    color: var(--cor);
+    border: 2.5px solid transparent;
+    padding: 10px;
+    border-radius: 6px;
+    font-family: "Exo 2", "Viga", Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    user-select: none;
+}
+
+.def-bigbutton:hover {
+    background: var(--hov);
+}
+
+.def-bigbutton:focus {
+    border-color: var(--br);
+}
+
+.def-smallbutton {
+    background: var(--bc-s);
+    color: var(--cor);
+    border: 2px solid transparent;
+    padding: 5px;
+    border-radius: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    user-select: none;
+}
+
+.def-smallbutton:hover {
+    background: var(--hov);
+}
+
+.def-smallbutton:focus {
+    border-color: var(--br);
+}
+
+.rotate-90 {
+    transform: rotate(-90deg);
+}
+
+.rotate180 {
+    transform: rotate(180deg);
+}
+
+.def-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: currentColor;
+}
+
+.def-title {
+    position: relative;
+}
+
+.def-title:hover::after {
+    content: attr(titulo);
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background: var(--bc-s);
+    border: 1px solid var(--br);
+    border-radius: 4px;
+    padding: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    animation: 5s title-animation ease-out;
+    animation-delay: .5s;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: var(--cor);
+    z-index: 10;
+    pointer-events: none;
+    font-weight: normal;
+    animation-fill-mode: forwards;
+}
+
+@keyframes title-animation {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    4% {
+        transform: none;
+        opacity: 1;
+    }
+
+    96% {
+        opacity: 1;
+        transform: none;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+.def-select::before {
+    content: '';
+    background: var(--bc-s);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+}
+
+.def-select {
+    position: absolute;
+    backdrop-filter: blur(7px);
+    border-radius: 4px;
+    padding: 3px;
+    user-select: none;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    transition: none;
+    transform: translateY(-15px);
+    opacity: 0;
+    white-space: nowrap;
+    z-index: 1;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5);
+}
+
+.def-select:focus {
+    width: auto;
+    height: auto;
+    transition: .2s transform ease-out, .2s opacity ease-out;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.def-select-title {
+    padding: 5px;
+    padding-top: 0;
+    margin-bottom: 3px;
+    border-bottom: 1px solid var(--br);
+    color: var(--cor);
+    font-family: "Exo 2", "Viga", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+}
+
+.selected, .selected * {
+    color: var(--feat) !important;
+}
+
+.def-select-option {
+    padding: 5px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    border-radius: 2px;
+}
+
+.def-select-option:hover {
+    background: var(--hov);
+}
+
+.def-select-option span {
+    color: var(--cor);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+}
+
+.def-select-option i {
+    font-size: 16px;
+    color: var(--desc);
+}
+
+.def-warn-button {
+    padding: 7px 12px;
+    border-radius: 4px;
+    background: var(--warn);
+    border: 0;
+    cursor: pointer;
+    font-family: "Exo 2", "Viga", Arial, Helvetica, sans-serif;
+    color: var(--cor);
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.def-warn-button * {
+    filter: drop-shadow(1px 1px 0 var(--inblack));
+}
+
+.def-nwarn-button {
+    padding: 7px;
+    border-radius: 4px;
+    background: transparent;
+    color: var(--warn);
+    border: 0;
+    cursor: pointer;
+    font-family: "Exo 2", "Viga", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.def-great-button * {
+    filter: drop-shadow(1px 1px 0 var(--inblack));
+}
+
+.def-great-button {
+    padding: 7px 12px;
+    border-radius: 4px;
+    background: var(--sel);
+    border: 0;
+    cursor: pointer;
+    font-family: "Exo 2", "Viga", Arial, Helvetica, sans-serif;
+    color: var(--cor);
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.def-great-button * {
+    filter: drop-shadow(1px 1px 0 var(--inblack));
+}
+
+.def-highlighted-button::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: var(--feat);
+    border-radius: 4px;
+}
+
+.def-highlighted-button {
+    padding: 7px 12px;
+    background: transparent;
+    color: var(--cor);
+    font-family: "Exo 2", "Viga", Arial, Helvetica, sans-serif;
+    border-radius: 4px;
+    border: 0;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    user-select: none;
+}
+
+.def-highlighted-button:hover::before {
+    filter: brightness(0.8);
+}
+
+.def-highlighted-button * {
+    filter: drop-shadow(1px 1px 0 var(--inblack));
+}
+
+.def-non-highlighted-button {
+    background: transparent;
+    border-radius: 4px;
+    padding: 7px;
+    color: var(--feat);
+    cursor: pointer;
+    font-family: "Exo 2", "Viga", Arial, Helvetica, sans-serif;
+    border: 0;
+    font-size: 16px;
+    user-select: none;
+}
+
+.def-non-highlighted-button:hover {
+    backdrop-filter: brightness(1.4);
+}
+
+.def-popup-space {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.def-popup {
+    width: 400px;
+    padding: 15px;
+    border-radius: 4px;
+    backdrop-filter: blur(7px);
+    box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.5);
+    animation: .3s popup-animation ease-out;
+    padding: 15px;
+}
+
+.def-popup-high::before {
+    content: '';
+    z-index: -1;
+    background: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    animation: .3s popup-high-opacity ease-out;
+}
+
+@keyframes popup-high-opacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.5;
+    }
+}
+
+.def-popup-high {
+    backdrop-filter: blur(7px);
+    animation: .3s popup-high-blur ease-out;
+}
+
+@keyframes popup-high-blur {
+    from {
+        backdrop-filter: blur(0);
+    }
+
+    to {
+        backdrop-filter: blur(7px);
+    }
+}
+
+@keyframes popup-animation {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.def-popup > div::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 4px;
+    background: var(--bc);
+    opacity: 0.8;
+    z-index: -1;
+}
+
+.def-popup > div {
+    max-height: 90vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.def-popup > div::-webkit-scrollbar {
+    width: 7px;
+    background: transparent;
+}
+
+.def-popup > div::-webkit-scrollbar-thumb {
+    background: var(--hov);
+}
+
+.def-popup-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+}
+
+.centralize-header {
+    align-items: center !important;
+}
+
+.def-popup-icon {
+    color: var(--desc);
+    font-size: 40px;
+}
+
+.def-popup-text {
+    margin-left: 15px;
+}
+
+.def-popup-title {
+    font-size: 20px;
+    color: var(--cor);
+    font-family: "Exo 2", "Viga", Arial, Helvetica, sans-serif;
+}
+
+.def-popup-body {
+    margin: 15px 0;
+}
+
+.def-popup-desc {
+    color: var(--cor);
+    font-family: "Titillium Web", "PT Sans", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+.def-popup-ask {
+    color: var(--cor);
+    display: flex;
+    font-family: "Rajdhani", "Titillium Web", Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    padding-bottom: 5px;
+}
+
+.def-popup-options {
+    margin-top: 15px;
+}
+
+.def-warn {
+    padding: 15px;
+    border: 2px solid var(--warn);
+}
+
+.def-warn-content {
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+.def-warn-icon {
+    font-size: 24px;
+    color: var(--warn);
+}
+
+.def-warn-text {
+    color: var(--warn);
+    margin-left: 15px;
+    font-size: 16px;
+    font-family: "PT Sans", Arial, Helvetica, sans-serif;
+}
+
+.def-toggle {
+    padding: 7px 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.def-toggle::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--warn);
+    border-radius: 50px;
+    transition: .3s background linear;
+}
+
+.def-toggle div.-toggler-ball- {
+    padding: 10px;
+    background: var(--warn);
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    border-radius: 50px;
+    transform: translateX(0);
+    transition: .3s transform cubic-bezier(.54,0,.44,1), .3s background linear;
+}
+
+.def-active-toggle::before {
+    background: var(--feat) !important;
+}
+
+.def-active-toggle div.-toggler-ball- {
+    background: var(--feat) !important;
+    transform: translateX(calc(100% - 3.25px)) !important;
+}
+
+/* Guias */
+
+/* 
+    Guias verticais (elemento pai das guias)
+        tabs
+
+    Guias horizontais (elemento pai das guias)
+        htabs
+
+    Exemplos:
+        def-tabs
+        def-htabs
+
+
+    Guias verticais:
+        tab
+    Exemplos:
+        def-tab
+        def-sel-tab <-- Guia vertical selecionada
+
+    Guias horizontais:
+        htab
+    Exemplos:
+        def-htab
+        def-sel-htab <-- Guia horizontal selecionada
+*/
+
+.def-htabs {
+    display: flex;
+    align-items: center;
+    padding: 3px 0;
+}
+
+.def-htab {
+    margin-left: 5px;
+    font-size: 12px;
+    color: var(--desc);
+    font-family: "Rubik", Impact, Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    border-radius: 2px;
+    padding: 5px;
+    user-select: none;
+    position: relative;
+}
+
+.def-htab:hover {
+    background: var(--bc-t);
+}
+
+.def-sel-htab {
+    background: transparent !important;
+    color: var(--cor) !important;
+}
+
+.def-sel-htab::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -3px;
+    left: -3px;
+    z-index: -1;
+    border-radius: 4px 4px 0 0 !important;
+    padding: 3px;
+    background: var(--bc) !important;
+    animation: .3s select-tab-animation ease-out;
+}
+
+@keyframes select-tab-animation {
+    from {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+
+    to {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+/* .def-tabs {
+    
+} */
+
+.def-tab {
+    margin: 0 10px;
+    color: var(--desc);
+    padding: 10px;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    user-select: none;
+    -webkit-user-drag: none;
+    font-family: "Titillium Web", "Rajdhani", "Viga", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.def-tab:hover {
+    background: var(--bc-t);
+}
+
+.def-tab-icon {
+    font-size: 20px;
+}
+
+.def-tab-name {
+    margin-left: 10px;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.def-sel-tab {
+    color: var(--cor) !important;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background: transparent !important;
+    position: relative;
+    z-index: 0;
+    overflow: visible;
+}
+
+.def-sel-tab span.-def-ripple-effect- {
+    display: none !important;
+}
+
+.def-sel-tab::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -10px;
+    right: -15px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    background: var(--bc);
+    border-radius: 6px 0 0 6px;
+    animation: .3s def-sel-tab-animation cubic-bezier(0,.91,.1,1);
+}
+
+@keyframes def-sel-tab-animation {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+/* --- Fim das guias --- */
