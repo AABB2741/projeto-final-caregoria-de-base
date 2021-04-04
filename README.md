@@ -19,4 +19,3 @@ Antes de entrar no Face in the Book, é necessário que você possua instalado e
 * [Python](https://www.python.org/) _linguagem de programação_
 * Django _biblioteca do Python_
 * Django Rest Framework _framework do Django_
-
