@@ -19,3 +19,15 @@ Antes de entrar no Face in the Book, é necessário que você possua instalado e
 * [Python](https://www.python.org/) _linguagem de programação_
 * Django _biblioteca do Python_
 * Django Rest Framework _framework do Django_
+
+Após concluir a instalação dos aplicativos, você deve entrar em: "FaceInTheBook/faceAPI/fbapi" e, neste local, abrir o CMD ou outro terminal.
+Quando abrir o terminal nesta localização, execute "python manage.py runserver" e pronto!
+
+#### Cadastrar-se no Face in the Book
+ - Após a inicialização, você pode entrar na página de login do Face in the Book;
+ - Clique em "Criar nova conta", caso você ainda não possua alguma e preencha os campos. Não insira informações que você utiliza em outros locais;
+ - Após o cadastro, caso os campos de login estejam vazios, eles serão preenchidos automaticamente com as informações que você acabou de inserir;
+ - Caso você tenha esquecido a senha, você pode facilmente recuperá-la apenas clicando em "Esqueceu a senha?" e inserindo o nome de usuário no campo de login;
+ - Pronto. Agora você pode aproveitar o Face in the Book da melhor forma possível!
+
+###### CRIADO POR [Mário](https://github.com/AABB2741/) para [Categoria de Base](https://categoriadebase.org/)
