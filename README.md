@@ -2,7 +2,7 @@
 
 
 ### O que é o Face in the Book
-O Face in the Book é uma rede social falsa que possui diversas funcionalidades bacanas. Você pode estar se perguntando __"Será que eu já vi esse nome em algum lugar"__. Sim, infelizmente o Face in the Book teve seu nome copiado por uma rede social norte-americana, que colocou o nome de __"Facebook"__.
+O Face in the Book é uma rede social falsa que possui diversas funcionalidades bacanas. Você pode estar se perguntando __"Será que eu já vi esse nome em algum lugar?"__. Sim, infelizmente o Face in the Book teve seu nome copiado por uma rede social norte-americana, que colocou o nome de __"Facebook"__.
 O Face in the Book é uma rede social com uma qualidade de design e funcionalidades de última geração.
 O Face in the Book atualmente está na sua 5° versão. Ele já possuiu outras 4 versões anteriores (todas horríveis), mas a versão 5 chegou para mostrar a "cara" real do Face in the Book.
 
