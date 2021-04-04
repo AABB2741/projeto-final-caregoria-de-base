@@ -31,6 +31,9 @@ Quando abrir o terminal nesta localização, execute "python manage.py runserver
 
 
 ## Desenvolvimento do Face in the Book
-O Face in the Book...
+O Face in the Book, como já falado, teve 4 versões anteriores. A cada versão, foi sempre melhorando algo, seja em questões visuais, como também em desempenho.
+
+### Comparação das versões
+Vamos ver as versões antigas comparadas com as versões mais recentes do Face in the Book.
 
 ###### Criado por [Mário](https://github.com/AABB2741/) para [Categoria de Base](https://categoriadebase.org/)
