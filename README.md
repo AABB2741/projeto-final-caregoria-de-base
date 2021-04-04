@@ -34,6 +34,10 @@ Quando abrir o terminal nesta localização, execute "python manage.py runserver
 O Face in the Book, como já falado, teve 4 versões anteriores. A cada versão, foi sempre melhorando algo, seja em questões visuais, como também em desempenho.
 
 ### Comparação das versões
-Vamos ver as versões antigas comparadas com as versões mais recentes do Face in the Book.
+Vamos ver as versões antigas comparadas com as versões mais recentes do Face in the Book para vocês verem o que mudou.
+
+#### v1
+Página inicial
+[Página Inicial Face in the Book versão 1](https://github.com/AABB2741/projeto-final-caregoria-de-base/blob/main/screenshots/v1%20-%20Main.png?raw=true)
 
 ###### Criado por [Mário](https://github.com/AABB2741/) para [Categoria de Base](https://categoriadebase.org/)
