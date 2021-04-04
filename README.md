@@ -1,6 +1,5 @@
 # Finalização projeto Rede Social
 
-## Conheça o Face in the Book
 ### O que é o Face in the Book
 O Face in the Book é uma rede social falsa que possui diversas funcionalidades bacanas. Você pode estar se perguntando __"Será que eu já vi esse nome em algum lugar?"__. Sim, infelizmente o Face in the Book teve seu nome copiado por uma rede social norte-americana, que colocou o nome de __"Facebook"__.
 O Face in the Book é uma rede social com uma qualidade de design e funcionalidades de última geração.
@@ -29,5 +28,9 @@ Quando abrir o terminal nesta localização, execute "python manage.py runserver
  - Após o cadastro, caso os campos de login estejam vazios, eles serão preenchidos automaticamente com as informações que você acabou de inserir;
  - Caso você tenha esquecido a senha, você pode facilmente recuperá-la apenas clicando em "Esqueceu a senha?" e inserindo o nome de usuário no campo de login;
  - Pronto. Agora você pode aproveitar o Face in the Book da melhor forma possível!
+
+
+## Desenvolvimento do Face in the Book
+O Face in the Book...
 
 ###### Criado por [Mário](https://github.com/AABB2741/) para [Categoria de Base](https://categoriadebase.org/)
