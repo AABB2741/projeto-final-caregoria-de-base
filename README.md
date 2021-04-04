@@ -90,23 +90,23 @@ Com o passar do tempo, o código do Face in the Book foi melhorando. Veja a cont
  - JavaScript: <ins>542</ins> linhas
 
 **Versão 2**
- - HTML: 
- - CSS: 
- - JavaScript
+ - HTML: <ins>1.305</ins> linhas
+ - CSS: <ins>3.493</ins> linhas
+ - JavaScript: <ins>6.776</ins> linhas
 
 **Versão 3**
- - HTML: 
- - CSS: 
- - JavaScript: 
+ - HTML: <ins>1.535</ins> linhas
+ - CSS: <ins>4.347</ins> linhas
+ - JavaScript: <ins>4.760</ins> linhas
 
 **Versão 4**
- - HTML: 
- - CSS: 
- - JavaScript: 
+ - HTML: <ins>1.955</ins> linhas
+ - CSS: <ins>5.397</ins> linhas
+ - JavaScript: <ins>5.755</ins> linhas
 
 **Versão 5**
- - HTML:
- - CSS: 
- - JavaScript: 
+ - HTML: <ins>6.404</ins> linhas
+ - CSS: <ins>7.121</ins> linhas
+ - JavaScript: <ins>9.077</ins> linhas
 
 ###### Criado por [Mário](https://github.com/AABB2741/) para [Categoria de Base](https://categoriadebase.org/)
