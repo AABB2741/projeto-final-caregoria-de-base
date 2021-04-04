@@ -16,7 +16,7 @@ Obs: Como já foi dito, o Face in the Book é apenas uma rede social falsa que f
 #### Antes de começar
 Antes de entrar no Face in the Book, é necessário que você possua instalado em sua máquina os seguintes aplicativos:
 
-1. Python __linguagem de programação__
-2. Django __biblioteca do Python__
-3. Django Rest Framework __framework do Django__
+* Python __linguagem de programação__
+* Django __biblioteca do Python__
+* Django Rest Framework __framework do Django__
 
