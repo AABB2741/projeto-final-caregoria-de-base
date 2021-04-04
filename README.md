@@ -82,10 +82,31 @@ Olhando pelas imagens, algumas versões são bem parecidas com outras. Mas qual 
 O design do Face in the Book seguia um padrão, que foi alterado desde a versão 4. Mas a principal mudança entre todas as versões é as suas funcionalidades. Isso porque, com o passar do tempo, eu fui aprendendo a melhorar o código e fazê-lo de uma maneira mais simples e mais eficaz. A maior diferença entre elas é o desempenho e as suas funcionalidades.
 
 ### O trabalho do Face in the Book
-A seguir, irei mostrar o quão difícil foi fazer todas as versões do Face in the Book através da quantidade de linhas escritas.
+Com o passar do tempo, o código do Face in the Book foi melhorando. Veja a contagem de linhas entre cada versão
 
 **Versão 1**
- - CSS
-   Teste
+ - HTML: <ins>138</ins> linhas
+ - CSS: <ins>449</ins> linhas
+ - JavaScript: <ins>542</ins> linhas
+
+**Versão 2**
+ - HTML: 
+ - CSS: 
+ - JavaScript
+
+**Versão 3**
+ - HTML: 
+ - CSS: 
+ - JavaScript: 
+
+**Versão 4**
+ - HTML: 
+ - CSS: 
+ - JavaScript: 
+
+**Versão 5**
+ - HTML:
+ - CSS: 
+ - JavaScript: 
 
 ###### Criado por [Mário](https://github.com/AABB2741/) para [Categoria de Base](https://categoriadebase.org/)
