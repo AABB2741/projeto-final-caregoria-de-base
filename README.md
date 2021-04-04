@@ -76,4 +76,16 @@ Página inicial
 Página principal
 ![Página principal Face in the Book versão 5](https://github.com/AABB2741/projeto-final-caregoria-de-base/blob/main/screenshots/v5%20-%20Main.png?raw=true)
 
+
+### O que tem de diferente?
+Olhando pelas imagens, algumas versões são bem parecidas com outras. Mas qual a principal diferença entre elas?
+O design do Face in the Book seguia um padrão, que foi alterado desde a versão 4. Mas a principal mudança entre todas as versões é as suas funcionalidades. Isso porque, com o passar do tempo, eu fui aprendendo a melhorar o código e fazê-lo de uma maneira mais simples e mais eficaz. A maior diferença entre elas é o desempenho e as suas funcionalidades.
+
+### O trabalho do Face in the Book
+A seguir, irei mostrar o quão difícil foi fazer todas as versões do Face in the Book através da quantidade de linhas escritas.
+
+**Versão 1**
+ - CSS
+   Teste
+
 ###### Criado por [Mário](https://github.com/AABB2741/) para [Categoria de Base](https://categoriadebase.org/)
