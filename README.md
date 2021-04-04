@@ -30,4 +30,4 @@ Quando abrir o terminal nesta localização, execute "python manage.py runserver
  - Caso você tenha esquecido a senha, você pode facilmente recuperá-la apenas clicando em "Esqueceu a senha?" e inserindo o nome de usuário no campo de login;
  - Pronto. Agora você pode aproveitar o Face in the Book da melhor forma possível!
 
-###### CRIADO POR [Mário](https://github.com/AABB2741/) para [Categoria de Base](https://categoriadebase.org/)
+###### Criado por [Mário](https://github.com/AABB2741/) para [Categoria de Base](https://categoriadebase.org/)
