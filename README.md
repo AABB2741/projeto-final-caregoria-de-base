@@ -36,8 +36,44 @@ O Face in the Book, como já falado, teve 4 versões anteriores. A cada versão,
 ### Comparação das versões
 Vamos ver as versões antigas comparadas com as versões mais recentes do Face in the Book para vocês verem o que mudou.
 
-#### v1
+
+#### Versão 1
 Página inicial
-![Página Inicial Face in the Book versão 1](https://github.com/AABB2741/projeto-final-caregoria-de-base/blob/main/screenshots/v1%20-%20Main.png?raw=true)
+![Página inicial Face in the Book versão 1](https://github.com/AABB2741/projeto-final-caregoria-de-base/blob/main/screenshots/v1%20-%20Main.png?raw=true)
+
+Página principal
+![Página principal Face in the Book versão 1](https://github.com/AABB2741/projeto-final-caregoria-de-base/blob/main/screenshots/v1%20-%20Main.png?raw=true)
+
+
+#### Versão 2
+Página inicial
+![Página inicial Face in the Book versão 2](https://github.com/AABB2741/projeto-final-caregoria-de-base/blob/main/screenshots/v2%20-%20Home.png?raw=true)
+
+Página principal
+![Página principal Face in the Book versão 2](https://github.com/AABB2741/projeto-final-caregoria-de-base/blob/main/screenshots/v2%20-%20Main.png?raw=true)
+
+
+#### Versão 3
+Página inicial
+![Página inicial Face in the Book versão 3](https://github.com/AABB2741/projeto-final-caregoria-de-base/blob/main/screenshots/v3%20-%20Home.png?raw=true)
+
+Página principal
+![Página principal Face in the Book versão 3](https://github.com/AABB2741/projeto-final-caregoria-de-base/blob/main/screenshots/v3%20-%20Main.png?raw=true)
+
+
+#### Versão 4
+Página inicial
+![Página inicial Face in the Book versão 4](https://github.com/AABB2741/projeto-final-caregoria-de-base/blob/main/screenshots/v4%20-%20Home.png?raw=true)
+
+Página principal
+![Página principal Face in the Book versão 4](https://github.com/AABB2741/projeto-final-caregoria-de-base/blob/main/screenshots/v4%20-%20Main.png?raw=true)
+
+
+#### Versão 5
+Página inicial
+![Página inicial Face in the Book versão 5](https://github.com/AABB2741/projeto-final-caregoria-de-base/blob/main/screenshots/v5%20-%20Home.png?raw=true)
+
+Página principal
+![Página principal Face in the Book versão 5](https://github.com/AABB2741/projeto-final-caregoria-de-base/blob/main/screenshots/v5%20-%20Main.png?raw=true)
 
 ###### Criado por [Mário](https://github.com/AABB2741/) para [Categoria de Base](https://categoriadebase.org/)
