@@ -39,7 +39,7 @@ Vamos ver as versões antigas comparadas com as versões mais recentes do Face i
 
 #### Versão 1
 Página inicial
-![Página inicial Face in the Book versão 1](https://github.com/AABB2741/projeto-final-caregoria-de-base/blob/main/screenshots/v1%20-%20Main.png?raw=true)
+![Página inicial Face in the Book versão 1](https://github.com/AABB2741/projeto-final-caregoria-de-base/blob/main/screenshots/v1%20-%20Home.png?raw=true)
 
 Página principal
 ![Página principal Face in the Book versão 1](https://github.com/AABB2741/projeto-final-caregoria-de-base/blob/main/screenshots/v1%20-%20Main.png?raw=true)
